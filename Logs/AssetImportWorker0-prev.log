@@ -1,0 +1,393 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.3f1 (4bef613afd59) revision 4976481'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.867; Version 2009; 64bit' Language: 'ja' Physical Memory: 8082 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/202011game/Desktop/MyUnityProjects/Animal Village
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+61850
+Successfully changed project path to: C:/Users/202011game/Desktop/MyUnityProjects/Animal Village
+C:/Users/202011game/Desktop/MyUnityProjects/Animal Village
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 201.96 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.3f1 (4bef613afd59)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/202011game/Desktop/MyUnityProjects/Animal Village/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x126)
+    Vendor:   Intel
+    VRAM:     128 MB
+    Driver:   9.17.10.4459
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56208
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003816 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 167.18 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.273 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005182 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.753 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2669 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.4 MB.
+System memory in use after: 98.6 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3123.
+Total: 3.221700 ms (FindLiveObjects: 0.250400 ms CreateObjectMapping: 0.124100 ms MarkObjects: 2.740100 ms  DeleteObjects: 0.104900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/RPGPP_LT/Textures/rpgpp_lt_sky_a.tga
+  artifactKey: Guid(5c4fa0e44769f8f46a06d96031e56a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Textures/rpgpp_lt_sky_a.tga using Guid(5c4fa0e44769f8f46a06d96031e56a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '133e205907565f6a1b290191d6bebde7') in 0.106892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.409992 seconds.
+  path: Assets/Scenes/MainScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dadfd68ea328d33edba39db4f47a248') in 0.019064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.190892 seconds.
+  path: Assets/RPGPP_LT/Scene
+  artifactKey: Guid(807cf4ac218a00345b44c9bd6cc3bf99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Scene using Guid(807cf4ac218a00345b44c9bd6cc3bf99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4e5f232f16f11fc046208255cc7b32c') in 0.025490 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.169489 seconds.
+  path: Assets/RPGPP_LT/Scene/rpgpp_lt_scene_1.0.unity
+  artifactKey: Guid(d2809ab9b90eea7419d8d90d4c505d35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPGPP_LT/Scene/rpgpp_lt_scene_1.0.unity using Guid(d2809ab9b90eea7419d8d90d4c505d35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae15d5a755e1bb7391a24e96e00dbc26') in 0.016778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 220.878586 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/049_iron.png
+  artifactKey: Guid(51c302f64de43fe4b8b02506b6ed1918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/049_iron.png using Guid(51c302f64de43fe4b8b02506b6ed1918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4a39a6b368b9e839d104e3eb0a6f616') in 0.117723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/050_lead.png
+  artifactKey: Guid(e04c60d59c469134bab3245c563a207c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/050_lead.png using Guid(e04c60d59c469134bab3245c563a207c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c8b328bf162bd63419838e489c64c55') in 0.027518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.012225 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/052_garilc.png
+  artifactKey: Guid(136ee8ea5a5a08f4cb8c023990b939f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/052_garilc.png using Guid(136ee8ea5a5a08f4cb8c023990b939f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd57e9647d352a2f517cb832b38531451') in 0.035262 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.048072 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/053_ginseng.png
+  artifactKey: Guid(f796666080e36b24182db720be6e5e05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/053_ginseng.png using Guid(f796666080e36b24182db720be6e5e05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beebad20fa6e8848271ea1d2ebcd1411') in 0.033632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.057680 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/054_flower.png
+  artifactKey: Guid(ca532bc308a18b144a9123b6edcfe5de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/054_flower.png using Guid(ca532bc308a18b144a9123b6edcfe5de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85ad84d426b46f7504b68bf3a70db0a4') in 0.032728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.058216 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/055_honeycomb.png
+  artifactKey: Guid(76a755ae054563843974fde2c746264a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/055_honeycomb.png using Guid(76a755ae054563843974fde2c746264a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd14ac47732f5224ca329bb18a55600a1') in 0.030436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.074719 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/057_pearl.png
+  artifactKey: Guid(9b23d1fb6091a9842b79b29df215fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/057_pearl.png using Guid(9b23d1fb6091a9842b79b29df215fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b51036b44709e49f346f3df561ec6ea8') in 0.036663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.051672 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/058_obsidian.png
+  artifactKey: Guid(509bfad95deac1e42a65bf1b2345e728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/058_obsidian.png using Guid(509bfad95deac1e42a65bf1b2345e728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '045b8d4668f7c7b0b3a2abfb79f71f19') in 0.031057 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.055889 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/059_soul.png
+  artifactKey: Guid(7494ba15848983f46b96fc61c28d5674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/059_soul.png using Guid(7494ba15848983f46b96fc61c28d5674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '377d759000ecdb6e8696ec2febd83077') in 0.033605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.059646 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/060_life.png
+  artifactKey: Guid(e8327ed7ecf84e34e8d5bb8a37d72618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/060_life.png using Guid(e8327ed7ecf84e34e8d5bb8a37d72618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01acdfa827bb6741c5c35b815f7a8e3d') in 0.033185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.054187 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/061_beer.png
+  artifactKey: Guid(fe9be467643906042b1db16df2a44148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/061_beer.png using Guid(fe9be467643906042b1db16df2a44148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ff77e3333f81d7d39bdb884d9980e3') in 0.032456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.114960 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/062_energy.png
+  artifactKey: Guid(eecd1e1d4e5dc3f4a975c18de888982a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/062_energy.png using Guid(eecd1e1d4e5dc3f4a975c18de888982a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f29fb6435093b653856565d8a0d7b7a') in 0.413499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000469 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/064_concentration potion.png
+  artifactKey: Guid(feeef5fc46986014c841f7aa2b9a1b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/064_concentration potion.png using Guid(feeef5fc46986014c841f7aa2b9a1b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3347dc72ee5de3bfce6e30e60dfb9dd7') in 0.067670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/068_laser.png
+  artifactKey: Guid(d1185d3af10a820458dba8fc55d0fa5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/068_laser.png using Guid(d1185d3af10a820458dba8fc55d0fa5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f10d39f6c588f96160da07f1646d21e3') in 0.045783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000401 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/066_power potion.png
+  artifactKey: Guid(c82e63eab3f66104b9d141d218e78e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/066_power potion.png using Guid(c82e63eab3f66104b9d141d218e78e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afa99cd1615d000253ed603fe39113b6') in 0.033745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/070_glowing powder.png
+  artifactKey: Guid(5b58351cb891f7b41b9970b7afa5ee68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/070_glowing powder.png using Guid(5b58351cb891f7b41b9970b7afa5ee68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1d2685fd053d3448f71e6f6d71e527c') in 0.037350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000452 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/067_magic powder.png
+  artifactKey: Guid(bae056595097aff4a983d33d5e15d4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/067_magic powder.png using Guid(bae056595097aff4a983d33d5e15d4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ff75ad7ae18a0b2a6a9d516498ee4fb') in 0.057850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000552 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/071_ball.png
+  artifactKey: Guid(9392f93915a0c67489f7288cf69dd701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/071_ball.png using Guid(9392f93915a0c67489f7288cf69dd701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66c17d7f6a167c164eed6f8260ec07c1') in 0.057673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.028594 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/074_aluminium.png
+  artifactKey: Guid(92151b1b187c65a4b98198069bedb1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/074_aluminium.png using Guid(92151b1b187c65a4b98198069bedb1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfd71a7701461a574737b2a876cf05f1') in 0.038703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.067129 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/075_copper.png
+  artifactKey: Guid(a3643d7022c5d3a4386c8809b963a0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/075_copper.png using Guid(a3643d7022c5d3a4386c8809b963a0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '761f4ccbb6edca301c5554ae7c50dcb7') in 0.041268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.075769 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/077_sapphire.png
+  artifactKey: Guid(49dfce2cc8c396e4497d13f48986d99c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/077_sapphire.png using Guid(49dfce2cc8c396e4497d13f48986d99c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec45e9c724d0772d61bffc7d7232af66') in 0.038314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.069697 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/079_amethyst.png
+  artifactKey: Guid(c05768ff84d08ea45a257e8dd1ddc2e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/079_amethyst.png using Guid(c05768ff84d08ea45a257e8dd1ddc2e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '614096a0c170eadfd723d1fc23fd1c0a') in 0.041284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.062059 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/080_cells.png
+  artifactKey: Guid(338cc04877ed9b642abc819503c5f721) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/080_cells.png using Guid(338cc04877ed9b642abc819503c5f721) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb40aa73df6ec66c13b3c28068f73cc5') in 0.050476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.053749 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/081_darkness.png
+  artifactKey: Guid(7727d08cc96a0634f870fb482417b37e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/081_darkness.png using Guid(7727d08cc96a0634f870fb482417b37e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5c626f7ca58f685bfa5857fa3e33b5d') in 0.030955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.053268 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/082_sparkling water.png
+  artifactKey: Guid(1aeaebe2ff34a064093cfd36c9b31a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/082_sparkling water.png using Guid(1aeaebe2ff34a064093cfd36c9b31a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3323df664388171224a337f87b4f110') in 0.032331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.058466 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/083_egg.png
+  artifactKey: Guid(ab8037f223a5e444da2c31e889f2ce23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/083_egg.png using Guid(ab8037f223a5e444da2c31e889f2ce23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76efde2594b763456f853c2b654cbe2d') in 0.027989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.050046 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/084_soap.png
+  artifactKey: Guid(93c4342162a08fb42ba1d71cc974c8be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/084_soap.png using Guid(93c4342162a08fb42ba1d71cc974c8be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8aee8ec220fb92182d9910065f940efa') in 0.029735 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.122162 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/086_cheese.png
+  artifactKey: Guid(89a4ce80a98242b42a126844f8333a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/086_cheese.png using Guid(89a4ce80a98242b42a126844f8333a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7df20de2fed406f448bbd066d220867') in 0.041827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.020064 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/087_salt.png
+  artifactKey: Guid(79701843a1fcb394ba32ed84e26ca01f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/087_salt.png using Guid(79701843a1fcb394ba32ed84e26ca01f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec3b48cf6f819d2d8b5edffd1b07b68e') in 0.043675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.047060 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/088_mushroom.png
+  artifactKey: Guid(421750e670078b94eaaf7932f9c6fc1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/088_mushroom.png using Guid(421750e670078b94eaaf7932f9c6fc1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6739194a12355a54b8d8b47a0fc677') in 0.048074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.046839 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/089_three leaf clover.png
+  artifactKey: Guid(0c99c08fb2785eb4da2a6de83d8a7e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/089_three leaf clover.png using Guid(0c99c08fb2785eb4da2a6de83d8a7e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bf768d39ec3b0ffa141790f2baf4799') in 0.041037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.274583 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/091_roots.png
+  artifactKey: Guid(2da13ce79e641fd469529b50b281f16e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/091_roots.png using Guid(2da13ce79e641fd469529b50b281f16e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1a084ef9e66705422ddd1f80162277a') in 0.060271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.145332 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/097_battery.png
+  artifactKey: Guid(303a9cecb0a7d1a4e9e1cb436ed64137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/097_battery.png using Guid(303a9cecb0a7d1a4e9e1cb436ed64137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c4c9fb1620103977a38a48fbe68ed1b') in 0.033523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.034759 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/098_soda.png
+  artifactKey: Guid(0aa5015c85da2404aa4d922b0ac985c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/098_soda.png using Guid(0aa5015c85da2404aa4d922b0ac985c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2ae2010d46b696f7f2cd901fc89dcc6') in 0.031113 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.064860 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/099_apple.png
+  artifactKey: Guid(b6c7d27f0d59fc044b552da7076847a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/099_apple.png using Guid(b6c7d27f0d59fc044b552da7076847a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f527ca849e21e5a13ada8527347aa12a') in 0.042878 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.073882 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/item_name.txt
+  artifactKey: Guid(646c2513dfe8e2043a8131ddf96d25d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/item_name.txt using Guid(646c2513dfe8e2043a8131ddf96d25d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fb0a03fc47ff659f3be4dcd48f2b9c0') in 0.032194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.815138 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/100_icecream.png
+  artifactKey: Guid(ad1e51affbfb23c45b474aca370a3551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/100_icecream.png using Guid(ad1e51affbfb23c45b474aca370a3551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92de7901b9bb731003782cb36f8529eb') in 0.034802 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.402414 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/078_emerald.png
+  artifactKey: Guid(97d86a1e589756a41a7320ebe81b0c8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/078_emerald.png using Guid(97d86a1e589756a41a7320ebe81b0c8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a7727c3e2406649b63fc767d1f26fb8') in 0.041705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.009296 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/076_zinc.png
+  artifactKey: Guid(8fc8d4c91aada9741ac406056815c903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/076_zinc.png using Guid(8fc8d4c91aada9741ac406056815c903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '241cfd994b7546e5d05a808f3278a98c') in 0.051627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.541033 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/073_black pearl.png
+  artifactKey: Guid(fdefdd160c56340449003232fcc1314b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/073_black pearl.png using Guid(fdefdd160c56340449003232fcc1314b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5924f858a741e3ba22e24ce547bc15f2') in 0.038642 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.485080 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/072_coin.png
+  artifactKey: Guid(93811637c77a71e4997586d3cdea4e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/072_coin.png using Guid(93811637c77a71e4997586d3cdea4e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3d51974cd2fc0d4e71dad9a39b60adc') in 0.033470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.718810 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/069_film of gossamer.png
+  artifactKey: Guid(312991b311b8ccc49adec5703787cb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/069_film of gossamer.png using Guid(312991b311b8ccc49adec5703787cb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1693712ee89af792ef29fc792034cc4d') in 0.045196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.465815 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/065_healing potion.png
+  artifactKey: Guid(bbe4f04da39757b43b86e63a47657063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/065_healing potion.png using Guid(bbe4f04da39757b43b86e63a47657063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '086bb8d9a1d660d62db45078f8a27391') in 0.033252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.696044 seconds.
+  path: Assets/VoxelAnimals/Assets/Models/Cat.fbx
+  artifactKey: Guid(99c74493bf8e38f4898ddecbf36b4291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VoxelAnimals/Assets/Models/Cat.fbx using Guid(99c74493bf8e38f4898ddecbf36b4291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f13a2908c4a833c38f72aadc10aade') in 0.185761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 72.951446 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/051_powdered bones.png
+  artifactKey: Guid(08c09715fa0a5a5459d08c73c0435261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/051_powdered bones.png using Guid(08c09715fa0a5a5459d08c73c0435261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74e350527ac5780695b71b74835db8c4') in 0.034189 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.256992 seconds.
+  path: Assets/ARISAN/100 Alchemy item icons-free/056_lavender.png
+  artifactKey: Guid(e0a49f84af22d4a459d2c9755de6d9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ARISAN/100 Alchemy item icons-free/056_lavender.png using Guid(e0a49f84af22d4a459d2c9755de6d9a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28c4a0a26395b33dada237d0c3b5a12d') in 0.037025 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005815 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.666 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2722 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 133.2 MB.
+System memory in use after: 132.8 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3814.
+Total: 3.569000 ms (FindLiveObjects: 0.325000 ms CreateObjectMapping: 0.129900 ms MarkObjects: 2.753300 ms  DeleteObjects: 0.358500 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
