@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterCamera : MonoBehaviour
 {
     //カメラオブジェクト
-    public GameObject mainCamera;
-    bool onClick = false;
+    public GameObject MainCamera;
+    public GameObject ZoomOutButton;
+    public bool onClick = false;
 
 
     //軸調整
@@ -31,13 +30,13 @@ public class CharacterCamera : MonoBehaviour
         if (onClick)
         {
             //ズーム処理
-            mainCamera.transform.position = new Vector3(transform.position.x, transform.position.y + yAdjust, transform.position.z + zAdjust);
-            mainCamera.transform.LookAt(transform.position);
+            MainCamera.transform.position = new Vector3(transform.position.x, transform.position.y + yAdjust, transform.position.z + zAdjust);
+            MainCamera.transform.LookAt(transform.position);
+            ZoomOutButton.SetActive(true);
         }
         else
         {
-            //カメラをもとに戻す処理
-            mainCamera.transform.position = new Vector3(0, 10f, -20f);
+            ZoomOutButton.SetActive(false);
         }
     }
 
@@ -48,6 +47,7 @@ public class CharacterCamera : MonoBehaviour
 
     public void OnClickReturn()
     {
+        MainCamera.transform.position = new Vector3(0, 10f, -20f);
         onClick = false;
     }
 }

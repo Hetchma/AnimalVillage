@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlusManager : MonoBehaviour
 {
@@ -16,7 +14,7 @@ public class PlusManager : MonoBehaviour
 
     }
 
-    public void OpenPlusCanvas()
+    public void OpenPlusAnimalPanel()
     {
         gameObject.SetActive(true);
     }
