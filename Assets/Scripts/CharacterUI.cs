@@ -14,5 +14,7 @@ public class CharacterUI : MonoBehaviour
     {
         // 自身の向きをカメラに向ける
         myRectTfm.LookAt(Camera.main.transform);
+        transform.Rotate(new Vector3(0f, -180f, 0f));
+
     }
 }

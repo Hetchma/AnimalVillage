@@ -11,7 +11,7 @@ public class CharacterCamera : MonoBehaviour
 
     //軸調整
     int yAdjust = 5;
-    int zAdjust = -10;
+    int zAdjust = -7;
 
     void Update()
     {
@@ -30,8 +30,14 @@ public class CharacterCamera : MonoBehaviour
 
         if (onClick)
         {
+            //ズーム処理
             mainCamera.transform.position = new Vector3(transform.position.x, transform.position.y + yAdjust, transform.position.z + zAdjust);
             mainCamera.transform.LookAt(transform.position);
+        }
+        else
+        {
+            //カメラをもとに戻す処理
+            mainCamera.transform.position = new Vector3(0, 10f, -20f);
         }
     }
 
@@ -40,4 +46,8 @@ public class CharacterCamera : MonoBehaviour
         onClick = true;
     }
 
+    public void OnClickReturn()
+    {
+        onClick = false;
+    }
 }

@@ -1,23 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MovingText : MonoBehaviour
 {
-    float posx;
+    public TextMeshProUGUI Text1;
+    public TextMeshProUGUI Text2;
+    public Image panel;
     float textWidth;
+    float panelWidth;
+    float textSpeed = 150f;
+    int textLenMax = 30;
+    //ContentSizeFitter csf1;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        textWidth = GetComponent<Text>().preferredHeight;
-        posx = GetComponent<RectTransform>().position.x;
+        TextSpace();
+        textWidth = Text1.preferredWidth;
+        panelWidth = panel.rectTransform.sizeDelta.x;
+        //Text2.rectTransform.position += new Vector3(textWidth * 2 + 20f, 0, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        posx -= 5f;
+        Text1.rectTransform.position += new Vector3(-textSpeed, 0, 0) * Time.deltaTime;
+        //Text2.rectTransform.position += new Vector3(-textSpeed, 0, 0);
+
+        if (Text1.rectTransform.localPosition.x < -(panelWidth / 2 + textWidth / 2))
+        {
+            Text1.rectTransform.localPosition = new Vector3(0, 0, 0);
+            Text1.rectTransform.localPosition += new Vector3(panelWidth / 2 + textWidth / 2 + 20f, 0, 0);
+        }
+        //if (Text2.rectTransform.position.x < -textWidth * 3)
+        //{
+        //    Text2.rectTransform.localPosition = new Vector3(0, 0, 0);
+        //    Text2.rectTransform.position += new Vector3(textWidth * 2 + 20f, 0, 0);
+        //}
     }
+
+    void TextSpace()
+    {
+        if (Text1.text != null)
+        {
+            //文字数を取得
+            int len = Text1.text.Length;
+
+            if (len < textLenMax)
+            {
+                for (int i = 0; i < textLenMax - len; i++)
+                {
+                    Text1.text += " ";
+                    //Text2.text += " ";
+                }
+            }
+        }
+    }
+
 }
