@@ -13,6 +13,7 @@ public class MapManager : MonoBehaviour
     public Button Chicken_Map_B;
     public Button Penguin_Map_B;
     public Button Lion_Map_B;
+    GameDirector GameDirector;
 
 
     public void Dog_Map_Button()
@@ -20,6 +21,7 @@ public class MapManager : MonoBehaviour
         Dog_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
         PlusMapPanel.SetActive(false);
         Dog_Map_B.interactable = false;
+        GameDirector.onRocked_Gold = false;
     }
 
     public void Chicken_Map_Button()
@@ -27,6 +29,7 @@ public class MapManager : MonoBehaviour
         Chicken_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
         PlusMapPanel.SetActive(false);
         Chicken_Map_B.interactable = false;
+        GameDirector.onRocked_Gold = false;
     }
 
     public void Penguin_Map_Button()
@@ -34,6 +37,7 @@ public class MapManager : MonoBehaviour
         Penguin_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
         PlusMapPanel.SetActive(false);
         Penguin_Map_B.interactable = false;
+        GameDirector.onRocked_Gold = false;
     }
 
     public void Lion_Map_Button()

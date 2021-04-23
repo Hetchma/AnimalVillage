@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public string charName;
 
     public float movementSpeed = 3;
     public float jumpForce = 300;
@@ -11,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float canJump = 0f;
     Animator anim;
     Rigidbody rb;
-    
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -35,7 +34,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
             anim.SetInteger("Walk", 1);
         }
-        else {
+        else
+        {
             anim.SetInteger("Walk", 0);
         }
 
@@ -43,9 +43,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && Time.time > canJump)
         {
-                rb.AddForce(0, jumpForce, 0);
-                canJump = Time.time + timeBeforeNextJump;
-                anim.SetTrigger("jump");
+            rb.AddForce(0, jumpForce, 0);
+            canJump = Time.time + timeBeforeNextJump;
+            anim.SetTrigger("jump");
         }
     }
+
+
 }

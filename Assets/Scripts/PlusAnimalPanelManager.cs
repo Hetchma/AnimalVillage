@@ -14,6 +14,10 @@ public class PlusAnimalPanelManager : MonoBehaviour
     public GameObject LionPrefab;
     GameObject animal;
 
+    //public Image newNameImage;
+    //public InputField inputField;
+    //string inputName;
+
 
     // Update is called once per frame
     void Update()
@@ -86,5 +90,17 @@ public class PlusAnimalPanelManager : MonoBehaviour
         .Join(animal.transform.DOMove(new Vector3(0, -5f, 0), 3f).SetRelative());
         sequence.Play();
 
+        //GetInputName(animal);
     }
+
+    //public void GetInputName(GameObject animal)
+    //{
+    //    //InputFieldからテキスト情報を取得する
+    //    animal.text = inputField.text;
+
+    //    //入力フォームのテキストを空にする
+    //    inputField.text = "";
+
+    //    newNameImage.enabled = false;
+    //}
 }

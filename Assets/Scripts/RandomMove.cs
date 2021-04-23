@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 //NavMeshAgent使うときに必要
 using UnityEngine.AI;

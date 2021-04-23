@@ -12,6 +12,13 @@ public class CharacterCamera : MonoBehaviour
     int yAdjust = 5;
     int zAdjust = -7;
 
+    //private void Awake()
+    //{
+    //    MainCamera = GameObject.Find("Main Camera");
+    //    ZoomOutButton = GameObject.Find("ZoomOutButton");
+    //}
+
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
