@@ -16,7 +16,14 @@ public class CharacterCamera : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //float distance = 100; // 飛ばす&表示するRayの長さ デバッグ
+            //float duration = 3;   // 表示期間（秒）デバッグ
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            ////光線可視化　デバッグ
+            //Debug.DrawRay(ray.origin, ray.direction * distance, Color.red, duration, false);
+
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
