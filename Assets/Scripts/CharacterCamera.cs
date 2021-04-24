@@ -3,10 +3,11 @@ using UnityEngine;
 public class CharacterCamera : MonoBehaviour
 {
     //カメラオブジェクト
-    public GameObject MainCamera;
-    public GameObject ZoomOutButton;
+    [SerializeField] GameObject MainCamera;
+    [SerializeField] GameObject ZoomOutButton;
+    //[SerializeField] GameObject UICanvas;
     public bool onClick = false;
-
+    Transform hittrn;
 
     //軸調整
     int yAdjust = 5;
@@ -36,7 +37,8 @@ public class CharacterCamera : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Animal"))
                 {
-                    OnClickCharacter();
+                    hittrn = hit.transform;
+                    onClick = true;
                 }
             }
         }
@@ -44,19 +46,16 @@ public class CharacterCamera : MonoBehaviour
         if (onClick)
         {
             //ズーム処理
-            MainCamera.transform.position = new Vector3(transform.position.x, transform.position.y + yAdjust, transform.position.z + zAdjust);
-            MainCamera.transform.LookAt(transform.position);
+            MainCamera.transform.position = new Vector3(hittrn.position.x, hittrn.position.y + yAdjust, hittrn.position.z + zAdjust);
+            MainCamera.transform.LookAt(hittrn.position);
             ZoomOutButton.SetActive(true);
+            //ZoomOutButton.transform.localPosition = UICanvas.transform.position + new Vector3(0, -50f, 0);
         }
         else
         {
             ZoomOutButton.SetActive(false);
+            //ZoomOutButton.transform.localPosition = UICanvas.transform.position + new Vector3(0, 200f, 0);
         }
-    }
-
-    public void OnClickCharacter()
-    {
-        onClick = true;
     }
 
     public void OnClickReturn()

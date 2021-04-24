@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 65706843018012252}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,6 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40079260bda69f14c80332a04d1632a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charName: 
   movementSpeed: 3
   jumpForce: 300
   timeBeforeNextJump: 1.2

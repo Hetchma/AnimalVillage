@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 4233490544183855993}
   - component: {fileID: 161704278008434801}
   - component: {fileID: 2278030260943779688}
-  - component: {fileID: 4275454721900826461}
   m_Layer: 0
   m_Name: Cat1
   m_TagString: Animal
@@ -228,21 +227,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4275454721900826461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4274152118671195227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7684c10724549a48c5fb2006955988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  ZoomOutButton: {fileID: 0}
-  onClick: 0
 --- !u!1 &4274869823736821535
 GameObject:
   m_ObjectHideFlags: 0
