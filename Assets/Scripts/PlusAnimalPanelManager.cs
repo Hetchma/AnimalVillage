@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlusAnimalPanelManager : MonoBehaviour
 {
@@ -12,12 +13,11 @@ public class PlusAnimalPanelManager : MonoBehaviour
     public GameObject ChickenPrefab;
     public GameObject PenguinPrefab;
     public GameObject LionPrefab;
+    [SerializeField] GameObject newNamePanel;
+
     GameObject animal;
-
-    //public Image newNameImage;
-    //public InputField inputField;
-    //string inputName;
-
+    InputField inputField;
+    Text inputName;
 
     // Update is called once per frame
     void Update()
@@ -85,22 +85,26 @@ public class PlusAnimalPanelManager : MonoBehaviour
     void Plus(GameObject animalPPrefab, Vector3 vector3)
     {
         animal = Instantiate(animalPPrefab, vector3, Quaternion.Euler(0, 0, 0));
+        inputName = animal.GetComponentInChildren<Text>();
+
         Sequence sequence = DOTween.Sequence()
         .Append(animal.transform.DORotate(Vector3.up * 180f, 3f))
-        .Join(animal.transform.DOMove(new Vector3(0, -5f, 0), 3f).SetRelative());
+        .Join(animal.transform.DOMove(new Vector3(0, -5f, 0), 3f).SetRelative())
+        .AppendCallback(() => newNamePanel.SetActive(true))
+        .AppendCallback(() => inputField = GameObject.Find("NameInput").GetComponent<InputField>());
         sequence.Play();
 
-        //GetInputName(animal);
+        gameObject.SetActive(false);
     }
 
-    //public void GetInputName(GameObject animal)
-    //{
-    //    //InputFieldからテキスト情報を取得する
-    //    animal.text = inputField.text;
+    public void GetInputName()
+    {
+        //InputFieldからテキスト情報を取得する
+        inputName.text = inputField.text;
 
-    //    //入力フォームのテキストを空にする
-    //    inputField.text = "";
+        //入力フォームのテキストを空にする
+        inputField.text = "";
 
-    //    newNameImage.enabled = false;
-    //}
+        newNamePanel.SetActive(false);
+    }
 }

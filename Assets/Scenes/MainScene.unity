@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 124788036}
   - component: {fileID: 124788035}
   m_Layer: 5
-  m_Name: NewName
+  m_Name: NewNamePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &245033961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4433,7 +4433,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 27.9}
+  m_SizeDelta: {x: 260.01, y: 27.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051489979
 MonoBehaviour:
@@ -4605,10 +4605,11 @@ MonoBehaviour:
   R_Button: {fileID: 529116652}
   L_Button: {fileID: 1133198505}
   CatPrefab: {fileID: 4274152118671195227, guid: 8181c9d48cd6625478925773721f47f2, type: 3}
-  DogPrefab: {fileID: 7061117977634145146, guid: 93b4bd0bbf8729f4fa3264b8188fd21a, type: 3}
+  DogPrefab: {fileID: 1477835125259655874, guid: 93b4bd0bbf8729f4fa3264b8188fd21a, type: 3}
   ChickenPrefab: {fileID: 1969419073538870, guid: aa3784adb6428184e991be2d60ee0cb2, type: 3}
   PenguinPrefab: {fileID: 1755646104177140, guid: 2884e6b071e1c2a4faef2e7fd67b481e, type: 3}
   LionPrefab: {fileID: 1553991042791506, guid: d2edcf95960b81249bf3f4a30ad1a908, type: 3}
+  newNamePanel: {fileID: 124788033}
 --- !u!114 &1074835322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7870,7 +7871,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1074835321}
+        m_TargetAssemblyTypeName: PlusAnimalPanelManager, Assembly-CSharp
+        m_MethodName: GetInputName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
