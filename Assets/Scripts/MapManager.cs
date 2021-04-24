@@ -16,6 +16,7 @@ public class MapManager : MonoBehaviour
 
     public GameDirector GameDirector;
 
+    [SerializeField] GameObject mainCamera;
 
     [SerializeField] Text Heart;
     [SerializeField] Text Dia;
@@ -24,36 +25,44 @@ public class MapManager : MonoBehaviour
 
     public void Dog_Map_Button()
     {
-        Dog_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
-        PlusMapPanel.SetActive(false);
+        NewMapInst(Dog_Map, new Vector3(-12f, 10f, -20f), "0");
         Dog_Map_B.interactable = false;
         GameDirector.onRocked_Gold = false;
-        Gold.text = "0";
     }
 
     public void Chicken_Map_Button()
     {
-        Chicken_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
-        PlusMapPanel.SetActive(false);
+        NewMapInst(Chicken_Map, new Vector3(-4.5f, 10f, -6.5f), "0");
         Chicken_Map_B.interactable = false;
         GameDirector.onRocked_Gold = false;
-        Gold.text = "0";
     }
 
     public void Penguin_Map_Button()
     {
-        Penguin_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
-        PlusMapPanel.SetActive(false);
+        NewMapInst(Penguin_Map, new Vector3(14f, 10f, -4f), "0");
         Penguin_Map_B.interactable = false;
         GameDirector.onRocked_Gold = false;
-        Gold.text = "0";
     }
 
     public void Lion_Map_Button()
     {
-        Lion_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
-        PlusMapPanel.SetActive(false);
+        NewMapInst(Lion_Map, new Vector3(18.5f, 10f, -23f), "MAX");
         Lion_Map_B.interactable = false;
-        Gold.text = "MAX";
+    }
+
+    void NewMapInst(GameObject map, Vector3 mapPos, string goldText)
+    {
+        Sequence cameraSequence_1 = DOTween.Sequence()
+            .Append(mainCamera.transform.DOMove(mapPos, 1f));
+        Sequence mapSequence = DOTween.Sequence()
+            .Append(map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic));
+        Sequence cameraSequence_2 = DOTween.Sequence()
+            .Append(mainCamera.transform.DOMove(new Vector3(0, 10, -20), 1f));
+        cameraSequence_1.Append(mapSequence).Append(cameraSequence_2);
+        cameraSequence_1.Play();
+
+        PlusMapPanel.SetActive(false);
+        Gold.text = goldText;
+
     }
 }
