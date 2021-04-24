@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -685,7 +685,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u72AC\u306E\u5CF6"
+  m_Text: "\u72AC\u306E\u5CF6\n\n100Gold"
 --- !u!222 &141507290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1620,7 +1620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u306B\u308F\u3068\u308A\u306E\u5CF6"
+  m_Text: "\u306B\u308F\u3068\u308A\u306E\u5CF6\n\n150Gold"
 --- !u!222 &343874164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2292,7 +2292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30DA\u30F3\u30AE\u30F3\u306E\u5CF6"
+  m_Text: "\u30DA\u30F3\u30AE\u30F3\u306E\u5CF6\n\n200Gold"
 --- !u!222 &467910653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9199,6 +9199,10 @@ MonoBehaviour:
   Chicken_Map_B: {fileID: 1571721225}
   Penguin_Map_B: {fileID: 934558580}
   Lion_Map_B: {fileID: 1798340977}
+  GameDirector: {fileID: 1147733016}
+  Heart: {fileID: 694522007}
+  Dia: {fileID: 1658492307}
+  Gold: {fileID: 810465269}
 --- !u!1 &2106368618
 GameObject:
   m_ObjectHideFlags: 0
@@ -9269,7 +9273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30E9\u30A4\u30AA\u30F3\u306E\u5CF6"
+  m_Text: "\u30E9\u30A4\u30AA\u30F3\u306E\u5CF6\n\n300Gold"
 --- !u!222 &2106368621
 CanvasRenderer:
   m_ObjectHideFlags: 0

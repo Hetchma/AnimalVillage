@@ -13,7 +13,13 @@ public class MapManager : MonoBehaviour
     public Button Chicken_Map_B;
     public Button Penguin_Map_B;
     public Button Lion_Map_B;
-    GameDirector GameDirector;
+
+    public GameDirector GameDirector;
+
+
+    [SerializeField] Text Heart;
+    [SerializeField] Text Dia;
+    [SerializeField] Text Gold;
 
 
     public void Dog_Map_Button()
@@ -22,6 +28,7 @@ public class MapManager : MonoBehaviour
         PlusMapPanel.SetActive(false);
         Dog_Map_B.interactable = false;
         GameDirector.onRocked_Gold = false;
+        Gold.text = "0";
     }
 
     public void Chicken_Map_Button()
@@ -30,6 +37,7 @@ public class MapManager : MonoBehaviour
         PlusMapPanel.SetActive(false);
         Chicken_Map_B.interactable = false;
         GameDirector.onRocked_Gold = false;
+        Gold.text = "0";
     }
 
     public void Penguin_Map_Button()
@@ -38,6 +46,7 @@ public class MapManager : MonoBehaviour
         PlusMapPanel.SetActive(false);
         Penguin_Map_B.interactable = false;
         GameDirector.onRocked_Gold = false;
+        Gold.text = "0";
     }
 
     public void Lion_Map_Button()
@@ -45,5 +54,6 @@ public class MapManager : MonoBehaviour
         Lion_Map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic);
         PlusMapPanel.SetActive(false);
         Lion_Map_B.interactable = false;
+        Gold.text = "MAX";
     }
 }

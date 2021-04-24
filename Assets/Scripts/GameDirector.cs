@@ -12,13 +12,13 @@ public class GameDirector : MonoBehaviour
     [SerializeField] Button LionMapButton;
 
     float currentTime;
-    float span = 0.1f;
+    float span = 0.01f;
 
     int heart = 0;
     int dia = 0;
     int gold = 0;
 
-    int goldCount = 0;
+    int goldRank = 0;
     int maxgold = 100;
     public bool onRocked_Gold = false;
 
@@ -40,50 +40,63 @@ public class GameDirector : MonoBehaviour
             Gold.text = gold.ToString();
         }
 
-        if (int.Parse(Heart.text) >= 100)
+        if (Gold.text != "MAX")
         {
-
-        }
-        if (int.Parse(Dia.text) >= 100)
-        {
-
+            GoldTrigger();
         }
 
-        if (int.Parse(Gold.text) >= 100 && goldCount == 0)
+
+    }
+
+    void GoldTrigger()
+    {
+        if (int.Parse(Gold.text) >= 100 && goldRank == 0)
         {
             DogMapButton.interactable = true;
-            goldCount++;
-            Gold.text = "0";
+            goldRank++;
             gold = 0;
             maxgold = 150;
             onRocked_Gold = true;
         }
-        else if (int.Parse(Gold.text) >= 150 && goldCount == 1)
+        else if (int.Parse(Gold.text) >= 150 && goldRank == 1)
         {
             ChickenMapButton.interactable = true;
-            goldCount++;
-            Gold.text = "0";
+            goldRank++;
             gold = 0;
             maxgold = 200;
             onRocked_Gold = true;
 
         }
-        else if (int.Parse(Gold.text) >= 200 && goldCount == 2)
+        else if (int.Parse(Gold.text) >= 200 && goldRank == 2)
         {
             PenguinMapButton.interactable = true;
-            goldCount++;
-            Gold.text = "0";
+            goldRank++;
             gold = 0;
             maxgold = 300;
             onRocked_Gold = true;
         }
-        else if (int.Parse(Gold.text) >= 300 && goldCount == 3)
+        else if (int.Parse(Gold.text) >= 300 && goldRank == 3)
         {
             LionMapButton.interactable = true;
-            goldCount++;
+            goldRank++;
             gold = 0;
-            Gold.text = "MAX";
             onRocked_Gold = true;
+        }
+    }
+
+    void HeartTrigger()
+    {
+        if (int.Parse(Heart.text) >= 100)
+        {
+
+        }
+    }
+
+    void DiaTrigger()
+    {
+        if (int.Parse(Dia.text) >= 100)
+        {
+
         }
     }
 }
