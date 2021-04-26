@@ -14,6 +14,15 @@ public class PlusAnimalPanelManager : MonoBehaviour
     public GameObject PenguinPrefab;
     public GameObject LionPrefab;
     [SerializeField] GameObject newNamePanel;
+    [SerializeField] GameObject cat_Map;
+    [SerializeField] GameObject dog_Map;
+    [SerializeField] GameObject chicken_Map;
+    [SerializeField] GameObject penguin_Map;
+    [SerializeField] GameObject lion_Map;
+
+    [SerializeField] Button plusButton;
+    [SerializeField] MapManager mapManager;
+
 
     GameObject animal;
     InputField inputField;
@@ -50,49 +59,81 @@ public class PlusAnimalPanelManager : MonoBehaviour
     public void RightButton()
     {
         UICamera.transform.localPosition += new Vector3(100f, 0, 0);
+        CanPlusAnimal();
     }
 
     public void LeftButton()
     {
         UICamera.transform.localPosition += new Vector3(-100f, 0, 0);
+        CanPlusAnimal();
     }
+
+    void CanPlusAnimal()
+    {
+        if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0) && mapManager.OnCatMap)
+        {
+            plusButton.interactable = true;
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0) && mapManager.OnDogMap)
+        {
+            plusButton.interactable = true;
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0) && mapManager.OnChickenMap)
+        {
+            plusButton.interactable = true;
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0) && mapManager.OnPenguinMap)
+        {
+            plusButton.interactable = true;
+
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && mapManager.OnLionMap)
+        {
+            plusButton.interactable = true;
+        }
+        else
+        {
+            plusButton.interactable = false;
+        }
+    }
+
 
     public void PlusAnimal()
     {
-        if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0))
+        if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0) && cat_Map.transform.position.y == 0)
         {
-            Plus(CatPrefab, new Vector3(0, 5f, 0));
+            Plus(CatPrefab, new Vector3(0, 6f, 0));
         }
-        else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0))
+        else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0) && dog_Map.transform.position.y == 0)
         {
-            Plus(DogPrefab, new Vector3(0, 5f, 0));
+            Plus(DogPrefab, new Vector3(-14f, 7f, -3f));
         }
-        else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0))
+        else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0) && chicken_Map.transform.position.y == 0)
         {
-            Plus(ChickenPrefab, new Vector3(0, 5f, 0));
+            Plus(ChickenPrefab, new Vector3(-9f, 5f, 10f));
         }
-        else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0))
+        else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0) && penguin_Map.transform.position.y == 0)
         {
-            Plus(PenguinPrefab, new Vector3(0, 5f, 0));
+            Plus(PenguinPrefab, new Vector3(13f, 9f, 17f));
         }
-        else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0))
+        else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && lion_Map.transform.position.y == 0)
         {
-            Plus(LionPrefab, new Vector3(0, 5f, 0));
+            Plus(LionPrefab, new Vector3(24f, 7f, -1f));
         }
 
 
     }
-    void Plus(GameObject animalPPrefab, Vector3 vector3)
+    void Plus(GameObject animalPrefab, Vector3 vector3)
     {
-        animal = Instantiate(animalPPrefab, vector3, Quaternion.Euler(0, 0, 0));
+        animal = Instantiate(animalPrefab, vector3, Quaternion.Euler(0, 0, 0));
         inputName = animal.GetComponentInChildren<Text>();
 
-        Sequence sequence = DOTween.Sequence()
+        Sequence animalMoveSequence = DOTween.Sequence()
         .Append(animal.transform.DORotate(Vector3.up * 180f, 3f))
         .Join(animal.transform.DOMove(new Vector3(0, -5f, 0), 3f).SetRelative())
         .AppendCallback(() => newNamePanel.SetActive(true))
         .AppendCallback(() => inputField = GameObject.Find("NameInput").GetComponent<InputField>());
-        sequence.Play();
+        animalMoveSequence.Play();
 
         gameObject.SetActive(false);
     }

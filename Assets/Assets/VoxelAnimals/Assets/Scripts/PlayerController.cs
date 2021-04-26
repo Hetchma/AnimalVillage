@@ -2,8 +2,6 @@
 
 public class PlayerController : MonoBehaviour
 {
-    public string charName;
-
     public float movementSpeed = 3;
     public float jumpForce = 300;
     public float timeBeforeNextJump = 1.2f;
