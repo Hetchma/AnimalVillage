@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
     public bool OnChickenMap = false;
     public bool OnPenguinMap = false;
     public bool OnLionMap = false;
-
+    public bool CanNavMesh = false;
 
     public void Dog_Map_Button()
     {
@@ -67,7 +67,9 @@ public class MapManager : MonoBehaviour
         Sequence mapSequence = DOTween.Sequence()
             .Append(map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic));
         Sequence cameraSequence_2 = DOTween.Sequence()
-            .Append(mainCamera.transform.DOMove(new Vector3(0, 10, -20), 1f));
+            .Append(mainCamera.transform.DOMove(new Vector3(0, 10, -20), 1f))
+            .AppendCallback(() => CanNavMesh = true);
+
         cameraSequence_1.Append(mapSequence).Append(cameraSequence_2);
         cameraSequence_1.Play();
 

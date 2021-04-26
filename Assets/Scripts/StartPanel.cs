@@ -9,7 +9,7 @@ public class StartPanel : MonoBehaviour
 
     void Update()
     {
-        mainCamera.transform.RotateAround(targetObject.transform.position, new Vector3(0, 1, 0), -0.1f);
+        mainCamera.transform.RotateAround(targetObject.transform.position, new Vector3(0, 1, 0), -0.2f);
 
 
         if (EventSystem.current.IsPointerOverGameObject())
