@@ -22,7 +22,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
 
     [SerializeField] Button plusButton;
     [SerializeField] MapManager mapManager;
-
+    [SerializeField] UIPanel uIPanel;
 
     GameObject animal;
     InputField inputField;
@@ -52,8 +52,11 @@ public class PlusAnimalPanelManager : MonoBehaviour
 
     public void OpenPlusAnimalPanel()
     {
-        gameObject.SetActive(true);
-        R_Button.SetActive(true);
+        if (uIPanel.CanOtherButton)
+        {
+            gameObject.SetActive(true);
+            R_Button.SetActive(true);
+        }
     }
 
     public void RightButton()
@@ -125,6 +128,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
     }
     void Plus(GameObject animalPrefab, Vector3 vector3)
     {
+        uIPanel.CanOtherButton = false;
         animal = Instantiate(animalPrefab, vector3, Quaternion.Euler(0, 0, 0));
         inputName = animal.GetComponentInChildren<Text>();
 
@@ -147,5 +151,16 @@ public class PlusAnimalPanelManager : MonoBehaviour
         inputField.text = "";
 
         newNamePanel.SetActive(false);
+        uIPanel.CanOtherButton = true;
+    }
+
+    //MacOSで改行できないようにする
+    public void OnValueChanged()
+    {
+        string value = this.GetComponent<InputField>().text;
+        if (value.IndexOf("\n") != -1)
+        {
+            this.GetComponent<InputField>().text = value;
+        }
     }
 }

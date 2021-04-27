@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlusMapPanelManager : MonoBehaviour
+public class PlusMaplPanelmanager : MonoBehaviour
 {
     public void OpenPlusMapPanel()
     {

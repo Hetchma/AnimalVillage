@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,16 +9,36 @@ public class PlayerController : MonoBehaviour
     private float canJump = 0f;
     Animator anim;
     Rigidbody rb;
+    NavMeshAgent m_navMeshAgent;
+
+    float eatTime;
+    float medicineTime;
+    bool CanEat;
+    bool CanMedicine;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        m_navMeshAgent = GetComponent<NavMeshAgent>();
+        m_navMeshAgent.enabled = false;
+        eatTime = 1.0f;
     }
 
     void Update()
     {
+        if (!m_navMeshAgent.enabled)
+        {
+            m_navMeshAgent.enabled = true;
+        }
+
         ControllPlayer();
+        eatTime -= Time.deltaTime;
+
+        if (eatTime <= 0)
+        {
+            CanEat = EatFlag();
+        }
     }
 
     void ControllPlayer()
@@ -47,5 +68,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    bool EatFlag()
+    {
+        eatTime = 1.0f;
+
+
+        return true;
+    }
 
 }

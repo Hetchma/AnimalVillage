@@ -17,10 +17,13 @@ public class MapManager : MonoBehaviour
     public GameDirector GameDirector;
 
     [SerializeField] GameObject mainCamera;
+    [SerializeField] UIPanel uIPanel;
 
     [SerializeField] Text Heart;
     [SerializeField] Text Dia;
     [SerializeField] Text Gold;
+
+
 
     public bool OnCatMap = true;
     public bool OnDogMap = false;
@@ -62,19 +65,28 @@ public class MapManager : MonoBehaviour
 
     void NewMapInst(GameObject map, Vector3 mapPos, string goldText)
     {
+        uIPanel.CanOtherButton = false;
         Sequence cameraSequence_1 = DOTween.Sequence()
             .Append(mainCamera.transform.DOMove(mapPos, 1f));
         Sequence mapSequence = DOTween.Sequence()
             .Append(map.transform.DOMove(new Vector3(0, 0, 0), 2f).SetEase(Ease.OutElastic));
         Sequence cameraSequence_2 = DOTween.Sequence()
             .Append(mainCamera.transform.DOMove(new Vector3(0, 10, -20), 1f))
-            .AppendCallback(() => CanNavMesh = true);
+            .AppendCallback(() => CanNavMesh = true)
+            .AppendCallback(() => uIPanel.CanOtherButton = true);
 
         cameraSequence_1.Append(mapSequence).Append(cameraSequence_2);
         cameraSequence_1.Play();
 
         PlusMapPanel.SetActive(false);
         Gold.text = goldText;
+    }
 
+    public void OpenPlusMapPanel()
+    {
+        if (uIPanel.CanOtherButton)
+        {
+            PlusMapPanel.SetActive(true);
+        }
     }
 }
