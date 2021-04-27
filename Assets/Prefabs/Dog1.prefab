@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5988604265185338628}
   - component: {fileID: 457067873272394858}
   m_Layer: 0
-  m_Name: baloon_medicine
+  m_Name: balloon_medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 4151468954321784704}
   - component: {fileID: 4896854084449711477}
   m_Layer: 0
-  m_Name: baloon_eat
+  m_Name: balloon_eat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6958620457260921277}
   - component: {fileID: 6504332715711063569}
   m_Layer: 0
-  m_Name: baloon_eat
+  m_Name: balloon_eat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1364817641429065306}
   - component: {fileID: 8122490591368610358}
   m_Layer: 0
-  m_Name: baloon_medicine
+  m_Name: balloon_medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

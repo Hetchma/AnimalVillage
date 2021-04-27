@@ -11,10 +11,19 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     NavMeshAgent m_navMeshAgent;
 
-    float eatTime;
-    float medicineTime;
-    bool CanEat;
-    bool CanMedicine;
+    Event newEvent;
+    float eventTimer = 10.0f;
+
+    GameObject animal;
+    GameObject eatImage;
+    GameObject medicineImage;
+
+    public enum Event
+    {
+        eat,
+        medicine,
+    }
+
 
     void Start()
     {
@@ -22,7 +31,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         m_navMeshAgent = GetComponent<NavMeshAgent>();
         m_navMeshAgent.enabled = false;
-        eatTime = 1.0f;
+
+        animal = transform.root.gameObject;
+        eatImage = animal.transform.Find("Canvas/balloon_eat").gameObject;
+        medicineImage = animal.transform.Find("Canvas/balloon_medicine").gameObject;
     }
 
     void Update()
@@ -33,11 +45,13 @@ public class PlayerController : MonoBehaviour
         }
 
         ControllPlayer();
-        eatTime -= Time.deltaTime;
 
-        if (eatTime <= 0)
+        eventTimer -= Time.deltaTime;
+
+        if (eventTimer <= 0)
         {
-            CanEat = EatFlag();
+            newEvent = EventSelecter();
+            RunEvent(newEvent);
         }
     }
 
@@ -68,12 +82,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    bool EatFlag()
+    Event EventSelecter()
     {
-        eatTime = 1.0f;
+        int number = Random.Range(1, 100);
 
-
-        return true;
+        if (number <= 80)
+        {
+            return Event.eat;
+        }
+        else
+        {
+            return Event.medicine;
+        }
     }
 
+    void RunEvent(Event newEvent)
+    {
+        if (!eatImage.activeSelf && !medicineImage.activeSelf)
+        {
+            if (newEvent == Event.eat)
+            {
+                eatImage.SetActive(true);
+                //イベント実行
+            }
+            else if (newEvent == Event.medicine)
+            {
+                medicineImage.SetActive(true);
+                //イベント実行
+            }
+        }
+    }
 }

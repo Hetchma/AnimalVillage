@@ -2,9 +2,14 @@
 
 public class MissionPanelManager : MonoBehaviour
 {
+    [SerializeField] UIPanel uIPanel;
+
     public void OpenEventPanel()
     {
-        gameObject.SetActive(true);
+        if (uIPanel.CanOtherButton)
+        {
+            gameObject.SetActive(true);
+        }
     }
 
 }
