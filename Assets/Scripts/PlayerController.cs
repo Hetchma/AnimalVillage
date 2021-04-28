@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     //[SerializeField] MissionPanelManager missionPanelManager;
     Event newEvent;
-    float eventTimer = 20.0f;
+    float eventTimer = 10.0f;
 
     GameObject animal;
     GameObject balloon_eat;
@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
         }
 
         eventTimer -= Time.deltaTime;
-        Debug.Log(eventTimer);
         if (eventTimer <= 0)
         {
             newEvent = EventSelecter();
