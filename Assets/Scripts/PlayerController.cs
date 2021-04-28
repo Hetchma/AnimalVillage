@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     NavMeshAgent m_navMeshAgent;
 
+    [SerializeField] MissionPanelManager missionPanelManager;
     Event newEvent;
-    float eventTimer = 10.0f;
+    public float eventTimer = 100.0f;
 
     GameObject animal;
     GameObject eatImage;
@@ -44,8 +45,6 @@ public class PlayerController : MonoBehaviour
             m_navMeshAgent.enabled = true;
         }
 
-        ControllPlayer();
-
         eventTimer -= Time.deltaTime;
 
         if (eventTimer <= 0)
@@ -53,6 +52,9 @@ public class PlayerController : MonoBehaviour
             newEvent = EventSelecter();
             RunEvent(newEvent);
         }
+
+        ControllPlayer();
+
     }
 
     void ControllPlayer()
@@ -82,6 +84,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //イベント発生時間決定
+    float EventTimer()
+    {
+        float number = Random.Range(120, 600);
+        return number;
+    }
+
+    //イベント選択
     Event EventSelecter()
     {
         int number = Random.Range(1, 100);
@@ -96,6 +106,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //イベント実行
     void RunEvent(Event newEvent)
     {
         if (!eatImage.activeSelf && !medicineImage.activeSelf)
@@ -104,6 +115,7 @@ public class PlayerController : MonoBehaviour
             {
                 eatImage.SetActive(true);
                 //イベント実行
+                missionPanelManager.Mission_1();
             }
             else if (newEvent == Event.medicine)
             {
