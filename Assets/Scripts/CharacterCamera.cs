@@ -61,6 +61,7 @@ public class CharacterCamera : MonoBehaviour
     public void OnClickReturn()
     {
         MainCamera.transform.position = new Vector3(0, 10f, -20f);
+        MainCamera.transform.rotation = Quaternion.Euler(25f, 0, 0);
         onClick = false;
     }
 }

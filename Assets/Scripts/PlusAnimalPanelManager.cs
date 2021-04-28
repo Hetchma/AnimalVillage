@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlusAnimalPanelManager : MonoBehaviour
 {
     public GameObject PlusAnimalPanel;
+    public GameObject mainCamera;
     public GameObject UICamera;
     public GameObject R_Button;
     public GameObject L_Button;
@@ -27,6 +28,10 @@ public class PlusAnimalPanelManager : MonoBehaviour
     GameObject animal;
     InputField inputField;
     Text inputName;
+
+    //軸調整
+    int yAdjust = 5;
+    int zAdjust = -7;
 
     // Update is called once per frame
     void Update()
@@ -129,8 +134,14 @@ public class PlusAnimalPanelManager : MonoBehaviour
     void Plus(GameObject animalPrefab, Vector3 vector3)
     {
         uIPanel.CanOtherButton = false;
+
         animal = Instantiate(animalPrefab, vector3, Quaternion.Euler(0, 0, 0));
         inputName = animal.GetComponentInChildren<Text>();
+
+        Sequence cameraSequence_1 = DOTween.Sequence()
+          .Append(mainCamera.transform.DOMove(new Vector3(vector3.x, vector3.y + yAdjust, vector3.z + zAdjust), 0))
+          .Join(mainCamera.transform.DOMove(new Vector3(0, -5f, 0), 3f).SetRelative());
+        cameraSequence_1.Play();
 
         Sequence animalMoveSequence = DOTween.Sequence()
         .Append(animal.transform.DORotate(Vector3.up * 180f, 3f))
@@ -150,6 +161,8 @@ public class PlusAnimalPanelManager : MonoBehaviour
         //入力フォームのテキストを空にする
         inputField.text = "";
 
+        mainCamera.transform.position = new Vector3(0, 10f, -20f);
+        mainCamera.transform.rotation = Quaternion.Euler(25f, 0, 0);
         newNamePanel.SetActive(false);
         uIPanel.CanOtherButton = true;
     }
