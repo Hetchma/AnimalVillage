@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     NavMeshAgent m_navMeshAgent;
 
-    [SerializeField] MissionPanelManager missionPanelManager;
+    //[SerializeField] MissionPanelManager missionPanelManager;
     Event newEvent;
-    public float eventTimer = 100.0f;
+    float eventTimer = 20.0f;
 
     GameObject animal;
-    GameObject eatImage;
-    GameObject medicineImage;
+    GameObject balloon_eat;
+    GameObject ballon_medicine;
 
     public enum Event
     {
@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour
         m_navMeshAgent.enabled = false;
 
         animal = transform.root.gameObject;
-        eatImage = animal.transform.Find("Canvas/balloon_eat").gameObject;
-        medicineImage = animal.transform.Find("Canvas/balloon_medicine").gameObject;
+        balloon_eat = animal.transform.Find("Canvas/balloon_eat").gameObject;
+        ballon_medicine = animal.transform.Find("Canvas/balloon_medicine").gameObject;
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         }
 
         eventTimer -= Time.deltaTime;
-
+        Debug.Log(eventTimer);
         if (eventTimer <= 0)
         {
             newEvent = EventSelecter();
@@ -109,17 +109,17 @@ public class PlayerController : MonoBehaviour
     //イベント実行
     void RunEvent(Event newEvent)
     {
-        if (!eatImage.activeSelf && !medicineImage.activeSelf)
+        if (!balloon_eat.activeSelf && !ballon_medicine.activeSelf)
         {
             if (newEvent == Event.eat)
             {
-                eatImage.SetActive(true);
+                balloon_eat.SetActive(true);
                 //イベント実行
-                missionPanelManager.Mission_1();
+
             }
             else if (newEvent == Event.medicine)
             {
-                medicineImage.SetActive(true);
+                ballon_medicine.SetActive(true);
                 //イベント実行
             }
         }

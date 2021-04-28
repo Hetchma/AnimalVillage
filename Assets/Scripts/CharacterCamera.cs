@@ -1,24 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterCamera : MonoBehaviour
 {
-    //カメラオブジェクト
     [SerializeField] GameObject MainCamera;
     [SerializeField] GameObject ZoomOutButton;
-    //[SerializeField] GameObject UICanvas;
+    [SerializeField] Button eatButton;
+    [SerializeField] Button medicineButton;
+    [SerializeField] MissionPanelManager MissionPanelManager;
     public bool onClick = false;
-    Transform hittrn;
+    Transform hitTrn;
+    GameObject hitObj;
 
     //軸調整
     int yAdjust = 5;
     int zAdjust = -7;
-
-    //private void Awake()
-    //{
-    //    MainCamera = GameObject.Find("Main Camera");
-    //    ZoomOutButton = GameObject.Find("ZoomOutButton");
-    //}
-
 
     void Update()
     {
@@ -32,13 +28,22 @@ public class CharacterCamera : MonoBehaviour
             ////光線可視化　デバッグ
             //Debug.DrawRay(ray.origin, ray.direction * distance, Color.red, duration, false);
 
-
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 if (hit.collider.CompareTag("Animal"))
                 {
-                    hittrn = hit.transform;
+                    hitObj = hit.collider.gameObject;
+                    hitTrn = hit.transform;
                     onClick = true;
+
+                    if (hitObj.transform.Find("Canvas/balloon_eat").gameObject.activeSelf)
+                    {
+                        eatButton.interactable = true;
+                    }
+                    if (hitObj.transform.Find("Canvas/balloon_medicine").gameObject.activeSelf)
+                    {
+                        medicineButton.interactable = true;
+                    }
                 }
             }
         }
@@ -46,15 +51,13 @@ public class CharacterCamera : MonoBehaviour
         if (onClick)
         {
             //ズーム処理
-            MainCamera.transform.position = new Vector3(hittrn.position.x, hittrn.position.y + yAdjust, hittrn.position.z + zAdjust);
-            MainCamera.transform.LookAt(hittrn.position);
+            MainCamera.transform.position = new Vector3(hitTrn.position.x, hitTrn.position.y + yAdjust, hitTrn.position.z + zAdjust);
+            MainCamera.transform.LookAt(hitTrn.position);
             ZoomOutButton.SetActive(true);
-            //ZoomOutButton.transform.localPosition = UICanvas.transform.position + new Vector3(0, -50f, 0);
         }
         else
         {
             ZoomOutButton.SetActive(false);
-            //ZoomOutButton.transform.localPosition = UICanvas.transform.position + new Vector3(0, 200f, 0);
         }
     }
 
@@ -62,6 +65,20 @@ public class CharacterCamera : MonoBehaviour
     {
         MainCamera.transform.position = new Vector3(0, 10f, -20f);
         MainCamera.transform.rotation = Quaternion.Euler(25f, 0, 0);
+        hitObj.transform.Find("Canvas/balloon_eat").gameObject.SetActive(false);
+        hitObj.transform.Find("Canvas/balloon_medicine").gameObject.SetActive(false);
         onClick = false;
+    }
+
+    public void OnClickEat()
+    {
+        MissionPanelManager.eatPoint++;
+        hitObj.transform.Find("Canvas/balloon_eat").gameObject.SetActive(false);
+    }
+
+    public void OnClickMedicine()
+    {
+        MissionPanelManager.medicinePoint++;
+        hitObj.transform.Find("Canvas/balloon_medicine").gameObject.SetActive(false);
     }
 }

@@ -9,6 +9,9 @@ public class MissionPanelManager : MonoBehaviour
     [SerializeField] GameObject diaPrefab;
     [SerializeField] GameObject diaPoint;
     [SerializeField] Text diaCount;
+    public int eatPoint = 0;
+    public int medicinePoint = 0;
+
 
     private void Update()
     {
