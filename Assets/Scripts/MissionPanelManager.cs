@@ -9,9 +9,15 @@ public class MissionPanelManager : MonoBehaviour
     [SerializeField] GameObject diaPrefab;
     [SerializeField] GameObject diaPoint;
     [SerializeField] Text diaCount;
+    [SerializeField] AudioClip compSE;
     public int eatPoint = 0;
     public int medicinePoint = 0;
+    AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -75,6 +81,9 @@ public class MissionPanelManager : MonoBehaviour
 
     void MissionComplete(string path)
     {
+        //SE
+        audioSource.PlayOneShot(compSE);
+
         //イベントパネルUI処理
         GameObject comp_Button = transform.Find(path + "/CompleteButton").gameObject;
         comp_Button.SetActive(false);

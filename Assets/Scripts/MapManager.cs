@@ -16,6 +16,9 @@ public class MapManager : MonoBehaviour
 
     public GameDirector GameDirector;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip newMapSE;
+
     [SerializeField] GameObject mainCamera;
     [SerializeField] UIPanel uIPanel;
 
@@ -23,14 +26,18 @@ public class MapManager : MonoBehaviour
     [SerializeField] Text Dia;
     [SerializeField] Text Gold;
 
-
-
     public bool OnCatMap = true;
     public bool OnDogMap = false;
     public bool OnChickenMap = false;
     public bool OnPenguinMap = false;
     public bool OnLionMap = false;
     public bool CanNavMesh = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     public void Dog_Map_Button()
     {
@@ -65,6 +72,7 @@ public class MapManager : MonoBehaviour
 
     void NewMapInst(GameObject map, Vector3 mapPos, string goldText)
     {
+        audioSource.PlayOneShot(newMapSE);
         uIPanel.CanOtherButton = false;
         Sequence cameraSequence_1 = DOTween.Sequence()
             .Append(mainCamera.transform.DOMove(mapPos, 1f));
