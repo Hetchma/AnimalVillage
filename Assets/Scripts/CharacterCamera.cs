@@ -7,7 +7,7 @@ public class CharacterCamera : MonoBehaviour
     [SerializeField] GameObject ZoomOutButton;
     [SerializeField] Button eatButton;
     [SerializeField] Button medicineButton;
-    [SerializeField] MissionPanelManager MissionPanelManager;
+    [SerializeField] UIPanel uIPanel;
     public bool onClick = false;
     Transform hitTrn;
     GameObject hitObj;
@@ -72,13 +72,19 @@ public class CharacterCamera : MonoBehaviour
 
     public void OnClickEat()
     {
-        MissionPanelManager.eatPoint++;
+        uIPanel.eatPoint++;
         hitObj.transform.Find("Canvas/balloon_eat").gameObject.SetActive(false);
+        hitObj.GetComponent<PlayerController>().eventTimer = 10.0f;
+        eatButton.interactable = false;
+        OnClickReturn();
     }
 
     public void OnClickMedicine()
     {
-        MissionPanelManager.medicinePoint++;
+        uIPanel.medicinePoint++;
         hitObj.transform.Find("Canvas/balloon_medicine").gameObject.SetActive(false);
+        hitObj.GetComponent<PlayerController>().eventTimer = 10.0f;
+        medicineButton.interactable = false;
+        OnClickReturn();
     }
 }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     //[SerializeField] MissionPanelManager missionPanelManager;
     Event newEvent;
-    float eventTimer = 10.0f;
+    public float eventTimer = 10.0f;
 
     GameObject animal;
     GameObject balloon_eat;

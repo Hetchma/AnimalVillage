@@ -932,7 +932,7 @@ MonoBehaviour:
   movementSpeed: 3
   jumpForce: 300
   timeBeforeNextJump: 1.2
-  eventTimer: 100
+  eventTimer: 10
 --- !u!195 &5645957506541181055
 NavMeshAgent:
   m_ObjectHideFlags: 0
