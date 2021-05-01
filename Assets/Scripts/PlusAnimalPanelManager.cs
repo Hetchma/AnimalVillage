@@ -25,6 +25,8 @@ public class PlusAnimalPanelManager : MonoBehaviour
     [SerializeField] MapManager mapManager;
     [SerializeField] UIPanel uIPanel;
 
+    [SerializeField] ParticleSystem animalParticle;
+
     GameObject animal;
     InputField inputField;
     Text inputName;
@@ -149,6 +151,8 @@ public class PlusAnimalPanelManager : MonoBehaviour
         .AppendCallback(() => newNamePanel.SetActive(true))
         .AppendCallback(() => inputField = GameObject.Find("NameInput").GetComponent<InputField>());
         animalMoveSequence.Play();
+
+        animalParticle.Play();
 
         gameObject.SetActive(false);
     }
