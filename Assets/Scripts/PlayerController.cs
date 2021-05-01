@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] MissionPanelManager missionPanelManager;
     Event newEvent;
     public float eventTimer = 10.0f;
+    public float navMeshTimer = 5f;
 
     GameObject animal;
     GameObject balloon_eat;
@@ -42,7 +43,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!m_navMeshAgent.enabled)
         {
+            navMeshTimer -= Time.deltaTime;
+        }
+
+        if (!m_navMeshAgent.enabled && navMeshTimer <= 0)
+        {
             m_navMeshAgent.enabled = true;
+            navMeshTimer = 0;
         }
 
         eventTimer -= Time.deltaTime;
@@ -52,7 +59,7 @@ public class PlayerController : MonoBehaviour
             RunEvent(newEvent);
         }
 
-        ControllPlayer();
+        //ControllPlayer();
 
     }
 

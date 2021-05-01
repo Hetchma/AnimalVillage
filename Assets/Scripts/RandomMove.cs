@@ -7,10 +7,10 @@ using UnityEngine.AI;
 
 public class RandomMove : MonoBehaviour
 {
-    public Transform central;
+    Transform central;
 
     private NavMeshAgent agent;
-    [SerializeField] float radius = 3;
+    [SerializeField] float radius = 10;
     [SerializeField] float waitTime = 5;
     [SerializeField] float time = 0;
 
@@ -21,14 +21,15 @@ public class RandomMove : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
         anim = GetComponent<Animator>();
+        central = transform;
+
 
         agent.autoBraking = false;
         //NavMeshAgentで回転をしないようにする
         agent.updateRotation = false;
 
-        GotoNextPoint();
+        //GotoNextPoint();
     }
     void GotoNextPoint()
     {
@@ -64,11 +65,24 @@ public class RandomMove : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (agent.pathStatus != NavMeshPathStatus.PathInvalid)
+        {
+            GotoNextPoint();
+        }
+
+    }
+
     void Update()
     {
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            StopHere();
+        if (agent.pathStatus != NavMeshPathStatus.PathInvalid)
+        {
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                StopHere();          //navMeshAgentの操作
+        }
 
-        anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
+
+        //anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
     }
 }

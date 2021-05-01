@@ -47,7 +47,6 @@ public class UIPanel : MonoBehaviour
         else if (Input.GetKey(KeyCode.UpArrow))
         {
             cam_Pos.z += 0.5f;
-
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {

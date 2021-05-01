@@ -17,7 +17,6 @@ public class MissionPanelManager : MonoBehaviour
         Mission_3();
     }
 
-
     public void OpenEventPanel()
     {
         if (uIPanel.CanOtherButton)

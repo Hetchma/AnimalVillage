@@ -19,6 +19,7 @@ public class NavMeshManager : MonoBehaviour
             // NavMeshをビルドする
             _surface.BuildNavMesh();
             mapManager.CanNavMesh = false;
+            Debug.Log("メッシュ完了");
         }
     }
 }
