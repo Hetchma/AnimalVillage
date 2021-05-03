@@ -100,12 +100,12 @@ public class CharacterCamera : MonoBehaviour
         //SE
         uIPanel.OncompSE();
 
-        //任意ボタン位置にダイヤ画像生成
+        //任意ボタン位置にハート画像生成
         GameObject heart = Instantiate(heartPrefab);
         heart.transform.SetParent(uIPanel.transform, false);
         heart.transform.position = ZoomOutButton.transform.position;
 
-        //ダイヤ取得Tween・ポイント追加
+        //ハート取得Tween・ポイント追加
         int point = int.Parse(heartCount.text);
 
         Sequence heartSequence = DOTween.Sequence()

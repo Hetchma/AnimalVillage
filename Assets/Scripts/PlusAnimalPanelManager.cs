@@ -136,6 +136,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
     void Plus(GameObject animalPrefab, Vector3 vector3)
     {
         uIPanel.CanOtherButton = false;
+        ParticleSystem particle = Instantiate(animalParticle, new Vector3(vector3.x, 2f, vector3.z), Quaternion.identity);
 
         animal = Instantiate(animalPrefab, vector3, Quaternion.Euler(0, 0, 0));
         inputName = animal.GetComponentInChildren<Text>();
@@ -149,10 +150,10 @@ public class PlusAnimalPanelManager : MonoBehaviour
         .Append(animal.transform.DORotate(Vector3.up * 180f, 3f))
         .Join(animal.transform.DOMove(new Vector3(0, -5f, 0), 3f).SetRelative())
         .AppendCallback(() => newNamePanel.SetActive(true))
-        .AppendCallback(() => inputField = GameObject.Find("NameInput").GetComponent<InputField>());
+        .AppendCallback(() => inputField = GameObject.Find("NameInput").GetComponent<InputField>())
+        .AppendCallback(() => particle.Stop());
         animalMoveSequence.Play();
 
-        animalParticle.Play();
 
         gameObject.SetActive(false);
     }

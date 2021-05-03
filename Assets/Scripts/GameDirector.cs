@@ -14,8 +14,6 @@ public class GameDirector : MonoBehaviour
     float currentTime;
     float span = 0.01f;
 
-    int heart = 0;
-    int dia = 0;
     int gold = 0;
 
     int goldRank = 0;
