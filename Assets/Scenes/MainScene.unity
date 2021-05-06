@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,7 +155,7 @@ RectTransform:
   m_Father: {fileID: 1006379830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.469697}
+  m_AnchorMin: {x: 0, y: 0.46969694}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -426,7 +426,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 74405733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 555735114}
+        m_TargetAssemblyTypeName: MissionPanelManager, Assembly-CSharp
+        m_MethodName: Mission_5_Comp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &74405733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,10 +720,10 @@ RectTransform:
   m_Father: {fileID: 126476070}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -15}
-  m_SizeDelta: {x: -10, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: -15}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112357460
 MonoBehaviour:
@@ -1059,10 +1071,10 @@ RectTransform:
   m_Father: {fileID: 1636466036}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -15}
-  m_SizeDelta: {x: -10, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: -15}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130377243
 MonoBehaviour:
@@ -1084,7 +1096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u52D5\u7269\u3092\uFF13\u5339\u547C\u307C\u3046"
+  m_text: "\u6700\u521D\u306E\u4EF2\u9593\u3092\u547C\u3093\u3067\u307F\u3088\u3046"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
@@ -2535,8 +2547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text1: {fileID: 1051489980}
-  Text2: {fileID: 0}
   panel: {fileID: 385560306}
+  canMoveText: 1
 --- !u!1001 &390029185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3113,7 +3125,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 487336127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 555735114}
+        m_TargetAssemblyTypeName: MissionPanelManager, Assembly-CSharp
+        m_MethodName: Mission_4_Comp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &487336127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,6 +3683,9 @@ MonoBehaviour:
   diaPrefab: {fileID: 6007922793773132030, guid: 415f505733634e143bfc881c4ebd9c5d, type: 3}
   diaPoint: {fileID: 323934833}
   diaCount: {fileID: 1658492307}
+  heartCount: {fileID: 694522007}
+  movingText: {fileID: 385560308}
+  missionTexts: []
 --- !u!1 &574948267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3550555022104882206, guid: 5948eb492cf070b45b819cc73e88ee13, type: 3}
@@ -3927,10 +3954,10 @@ RectTransform:
   m_Father: {fileID: 1500015706}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -15}
-  m_SizeDelta: {x: -10, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: -15}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648543757
 MonoBehaviour:
@@ -3952,7 +3979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u732B\u3092\uFF13\u5339\u547C\u307C\u3046"
+  m_text: "\u306B\u308F\u3068\u308A\u306E\u5CF6\u3092\u51FA\u73FE\u3055\u305B\u3088\u3046"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
@@ -4259,7 +4286,7 @@ RectTransform:
   m_Father: {fileID: 1636466036}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: -2.5}
   m_SizeDelta: {x: -10, y: -5}
@@ -5279,7 +5306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 835580353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 555735114}
+        m_TargetAssemblyTypeName: MissionPanelManager, Assembly-CSharp
+        m_MethodName: Mission_2_Comp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &835580353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5679,7 +5718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 913580139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 555735114}
+        m_TargetAssemblyTypeName: MissionPanelManager, Assembly-CSharp
+        m_MethodName: Mission_6_Comp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &913580139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6940,10 +6991,10 @@ RectTransform:
   m_Father: {fileID: 1216382360}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -15}
-  m_SizeDelta: {x: -10, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: -15}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130125397
 MonoBehaviour:
@@ -6965,7 +7016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u732B\u3092\uFF13\u5339\u547C\u307C\u3046"
+  m_text: "\u52D5\u7269\u305F\u3061\u306B\u30EA\u30F3\u30B4\u304B\u304A\u85AC\u309220\u500B\u3042\u3052\u3088\u3046"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
@@ -11134,10 +11185,10 @@ RectTransform:
   m_Father: {fileID: 1883841841}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -15}
-  m_SizeDelta: {x: -10, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: -15}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751005598
 MonoBehaviour:
@@ -11159,7 +11210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u732B\u3092\uFF13\u5339\u547C\u307C\u3046"
+  m_text: "\u52D5\u7269\u305F\u3061\u306B\u30EA\u30F3\u30B4\u304B\u304A\u85AC\u30925\u500B\u3042\u3052\u3088\u3046\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
@@ -11610,7 +11661,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1068125}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.530303
+  m_Size: 0.53030306
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11889,7 +11940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30DF\u30C3\u30B7\u30E7\u30F3\uFF11"
+  m_text: "\u30DF\u30C3\u30B7\u30E7\u30F3\uFF15"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
@@ -12888,10 +12939,10 @@ RectTransform:
   m_Father: {fileID: 2018568664}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -15}
-  m_SizeDelta: {x: -10, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110, y: -15}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966025704
 MonoBehaviour:
@@ -12913,7 +12964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u52D5\u7269\u305F\u3061\u306B\u30EA\u30F3\u30B4\u30925\u500B\n\u98DF\u3079\u3055\u305B\u3066\u3042\u3052\u3088\u3046"
+  m_text: "\u4EF2\u9593\u3092\uFF13\u5339\u306B\u5897\u3084\u305D\u3046"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
@@ -13222,7 +13273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30DF\u30C3\u30B7\u30E7\u30F3\uFF15"
+  m_text: "\u30DF\u30C3\u30B7\u30E7\u30F3\uFF14"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
   m_sharedMaterial: {fileID: -7423282991156409798, guid: 2c4d64e29f70c4042ae7a4b272560512, type: 2}
