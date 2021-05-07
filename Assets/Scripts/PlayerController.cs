@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     Event newEvent;
     public float eventTimer = 10.0f;
     public float navMeshTimer = 5f;
+    float speed;
 
     GameObject animal;
     GameObject balloon_eat;
@@ -52,27 +53,33 @@ public class PlayerController : MonoBehaviour
             navMeshTimer = 0;
         }
 
-        eventTimer -= Time.deltaTime;
+        if (eventTimer >= -1)
+        {
+            eventTimer -= Time.deltaTime;
+        }
+
         if (eventTimer <= 0)
         {
             newEvent = EventSelecter();
             RunEvent(newEvent);
         }
 
-        //ControllPlayer();
+        ControllPlayer();
 
     }
 
     void ControllPlayer()
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
+        speed = rb.velocity.magnitude;
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        //float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        //float moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (movement != Vector3.zero)
+        //Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        if (speed != 0)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
             anim.SetInteger("Walk", 1);
         }
         else
@@ -80,14 +87,14 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("Walk", 0);
         }
 
-        transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+        //transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
 
-        if (Input.GetButtonDown("Jump") && Time.time > canJump)
-        {
-            rb.AddForce(0, jumpForce, 0);
-            canJump = Time.time + timeBeforeNextJump;
-            anim.SetTrigger("jump");
-        }
+        //if (Input.GetButtonDown("Jump") && Time.time > canJump)
+        //{
+        //    rb.AddForce(0, jumpForce, 0);
+        //    canJump = Time.time + timeBeforeNextJump;
+        //    anim.SetTrigger("jump");
+        //}
     }
 
     //イベント発生時間決定
