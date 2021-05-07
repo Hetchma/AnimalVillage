@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +25,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
     [SerializeField] Button plusButton;
     [SerializeField] MapManager mapManager;
     [SerializeField] UIPanel uIPanel;
+    [SerializeField] TextMeshProUGUI nameText;
 
     [SerializeField] Text heartText;
     [SerializeField] Text CostText;
@@ -99,22 +101,27 @@ public class PlusAnimalPanelManager : MonoBehaviour
         if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0))
         {
             CostText.text = catCost.ToString();
+            nameText.text = "ねこ";
         }
         else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0))
         {
             CostText.text = dogCost.ToString();
+            nameText.text = "いぬ";
         }
         else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0))
         {
             CostText.text = chickenCost.ToString();
+            nameText.text = "にわとり";
         }
         else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0))
         {
             CostText.text = penguinCost.ToString();
+            nameText.text = "ペンギン";
         }
         else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0))
         {
             CostText.text = lionCost.ToString();
+            nameText.text = "ライオン";
         }
     }
 
