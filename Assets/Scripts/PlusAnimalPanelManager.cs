@@ -25,6 +25,9 @@ public class PlusAnimalPanelManager : MonoBehaviour
     [SerializeField] MapManager mapManager;
     [SerializeField] UIPanel uIPanel;
 
+    [SerializeField] Text heartText;
+    [SerializeField] Text CostText;
+
     [SerializeField] ParticleSystem animalParticle;
 
     GameObject animal;
@@ -35,9 +38,19 @@ public class PlusAnimalPanelManager : MonoBehaviour
     int yAdjust = 5;
     int zAdjust = -7;
 
+    //動物生成ハートコスト
+    int catCost = 5;
+    int dogCost = 10;
+    int chickenCost = 20;
+    int penguinCost = 30;
+    int lionCost = 50;
+
     // Update is called once per frame
     void Update()
     {
+        AnimalCost();
+        CanPlusAnimal();
+
         if (UICamera.activeSelf && UICamera.transform.localPosition.x <= 1000f)
         {
             L_Button.SetActive(false);
@@ -69,35 +82,62 @@ public class PlusAnimalPanelManager : MonoBehaviour
     public void RightButton()
     {
         UICamera.transform.localPosition += new Vector3(100f, 0, 0);
-        CanPlusAnimal();
+        //AnimalCost();
+        //CanPlusAnimal();
     }
 
     public void LeftButton()
     {
         UICamera.transform.localPosition += new Vector3(-100f, 0, 0);
-        CanPlusAnimal();
+        //AnimalCost();
+        //CanPlusAnimal();
     }
+
+
+    void AnimalCost()
+    {
+        if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0))
+        {
+            CostText.text = catCost.ToString();
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0))
+        {
+            CostText.text = dogCost.ToString();
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0))
+        {
+            CostText.text = chickenCost.ToString();
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0))
+        {
+            CostText.text = penguinCost.ToString();
+        }
+        else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0))
+        {
+            CostText.text = lionCost.ToString();
+        }
+    }
+
 
     void CanPlusAnimal()
     {
-        if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0) && mapManager.OnCatMap)
+        if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0) && mapManager.OnCatMap && int.Parse(heartText.text) >= catCost)
         {
             plusButton.interactable = true;
         }
-        else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0) && mapManager.OnDogMap)
+        else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0) && mapManager.OnDogMap && int.Parse(heartText.text) >= dogCost)
         {
             plusButton.interactable = true;
         }
-        else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0) && mapManager.OnChickenMap)
+        else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0) && mapManager.OnChickenMap && int.Parse(heartText.text) >= chickenCost)
         {
             plusButton.interactable = true;
         }
-        else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0) && mapManager.OnPenguinMap)
+        else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0) && mapManager.OnPenguinMap && int.Parse(heartText.text) >= penguinCost)
         {
             plusButton.interactable = true;
-
         }
-        else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && mapManager.OnLionMap)
+        else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && mapManager.OnLionMap && int.Parse(heartText.text) >= lionCost)
         {
             plusButton.interactable = true;
         }
@@ -113,22 +153,28 @@ public class PlusAnimalPanelManager : MonoBehaviour
         if (UICamera.transform.localPosition == new Vector3(1000f, 0, 0) && cat_Map.transform.position.y == 0)
         {
             Plus(CatPrefab, new Vector3(0, 6f, 0));
+            heartText.text = (int.Parse(heartText.text) - catCost).ToString();
+
         }
         else if (UICamera.transform.localPosition == new Vector3(1100f, 0, 0) && dog_Map.transform.position.y == 0)
         {
             Plus(DogPrefab, new Vector3(-14f, 7f, -3f));
+            heartText.text = (int.Parse(heartText.text) - dogCost).ToString();
         }
         else if (UICamera.transform.localPosition == new Vector3(1200f, 0, 0) && chicken_Map.transform.position.y == 0)
         {
             Plus(ChickenPrefab, new Vector3(-9f, 5f, 10f));
+            heartText.text = (int.Parse(heartText.text) - chickenCost).ToString();
         }
         else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0) && penguin_Map.transform.position.y == 0)
         {
             Plus(PenguinPrefab, new Vector3(13f, 9f, 17f));
+            heartText.text = (int.Parse(heartText.text) - penguinCost).ToString();
         }
         else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && lion_Map.transform.position.y == 0)
         {
             Plus(LionPrefab, new Vector3(24f, 7f, -1f));
+            heartText.text = (int.Parse(heartText.text) - lionCost).ToString();
         }
 
 
@@ -154,7 +200,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
         .AppendCallback(() => particle.Stop());
         animalMoveSequence.Play();
 
-
+        plusButton.interactable = false;
         gameObject.SetActive(false);
     }
 

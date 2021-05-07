@@ -40,13 +40,13 @@ public class GameDirector : MonoBehaviour
 
         if (Gold.text != "MAX")
         {
-            GoldTrigger();
+            NewMapTrigger();
         }
 
 
     }
 
-    void GoldTrigger()
+    void NewMapTrigger()
     {
         if (int.Parse(Gold.text) >= 100 && goldRank == 0)
         {

@@ -16,10 +16,6 @@ public class MissionPanelManager : MonoBehaviour
 
     public List<GameObject> missionTexts = new List<GameObject>();
 
-    private void Start()
-    {
-    }
-
 
     private void Update()
     {
