@@ -180,7 +180,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
         }
         else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && lion_Map.transform.position.y == 0)
         {
-            Plus(LionPrefab, new Vector3(22f, 7f, -1f));
+            Plus(LionPrefab, new Vector3(18f, 7f, -1f));
             heartText.text = (int.Parse(heartText.text) - lionCost).ToString();
         }
 
