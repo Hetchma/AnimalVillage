@@ -849,6 +849,7 @@ MonoBehaviour:
   jumpForce: 300
   timeBeforeNextJump: 1.2
   eventTimer: 10
+  navMeshTimer: 1
 --- !u!54 &8402322375191470348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -885,7 +886,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8368277331516206774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5

@@ -175,7 +175,7 @@ public class PlusAnimalPanelManager : MonoBehaviour
         }
         else if (UICamera.transform.localPosition == new Vector3(1300f, 0, 0) && penguin_Map.transform.position.y == 0)
         {
-            Plus(PenguinPrefab, new Vector3(13f, 9f, 17f));
+            Plus(PenguinPrefab, new Vector3(13f, 7f, 17f));
             heartText.text = (int.Parse(heartText.text) - penguinCost).ToString();
         }
         else if (UICamera.transform.localPosition == new Vector3(1400f, 0, 0) && lion_Map.transform.position.y == 0)
