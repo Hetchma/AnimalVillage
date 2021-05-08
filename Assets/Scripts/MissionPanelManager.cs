@@ -13,8 +13,10 @@ public class MissionPanelManager : MonoBehaviour
     [SerializeField] Text diaCount;
     [SerializeField] Text heartCount;
     [SerializeField] MovingText movingText;
+    public int heartTotalCount;
 
     public List<GameObject> missionTexts = new List<GameObject>();
+
 
 
     private void Update()
@@ -84,7 +86,7 @@ public class MissionPanelManager : MonoBehaviour
     //動物たちにリンゴを5個食べさせてあげよう
     public void Mission_4()
     {
-        if (int.Parse(heartCount.text) >= 50)
+        if (heartTotalCount >= 50)
         {
             OnMission("Viewport/Content/MissionBoard_4/CompleteButton");
         }

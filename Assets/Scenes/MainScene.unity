@@ -3589,6 +3589,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 300770950583530922, guid: 2280c0f66650f0c4997c91be8edae1f2, type: 3}
   heartPoint: {fileID: 723354674}
   heartCount: {fileID: 694522007}
+  missionPanelManager: {fileID: 555735114}
   onClick: 0
 --- !u!114 &537657671
 MonoBehaviour:
@@ -3907,6 +3908,7 @@ MonoBehaviour:
   diaCount: {fileID: 1658492307}
   heartCount: {fileID: 694522007}
   movingText: {fileID: 385560308}
+  heartTotalCount: 0
   missionTexts: []
 --- !u!1 &574948267 stripped
 GameObject:

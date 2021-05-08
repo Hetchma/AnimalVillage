@@ -12,6 +12,7 @@ public class CharacterCamera : MonoBehaviour
     [SerializeField] GameObject heartPrefab;
     [SerializeField] GameObject heartPoint;
     [SerializeField] Text heartCount;
+    [SerializeField] MissionPanelManager missionPanelManager;
 
     public bool onClick = false;
     Transform hitTrn;
@@ -111,6 +112,7 @@ public class CharacterCamera : MonoBehaviour
         Sequence heartSequence = DOTween.Sequence()
         .Append(heart.transform.DOMove(heartPoint.transform.position, 1f))
         .AppendCallback(() => heartCount.GetComponent<Text>().text = (point + 10).ToString())
+        .AppendCallback(() => missionPanelManager.heartTotalCount += 10)
         .AppendCallback(() => Destroy(heart));
     }
 }
