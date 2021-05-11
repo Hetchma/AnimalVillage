@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     //[SerializeField] MissionPanelManager missionPanelManager;
     Event newEvent;
-    public float eventTimer = 10.0f;
+    public float eventTimer = 20.0f;
     public float navMeshTimer = 5f;
     float speed;
 

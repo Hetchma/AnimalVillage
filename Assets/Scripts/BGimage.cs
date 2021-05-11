@@ -7,6 +7,7 @@ public class BGimage : MonoBehaviour
     public GameObject PlusMapPanel;
     public GameObject MissionView;
     public GameObject SettingPanel;
+    public GameObject HowToPanel;
 
     void Start()
     {
@@ -45,7 +46,10 @@ public class BGimage : MonoBehaviour
         }
         if (SettingPanel.activeSelf)
         {
-            SettingPanel.SetActive(false);
+            if (!HowToPanel.activeSelf)
+            {
+                SettingPanel.SetActive(false);
+            }
         }
     }
 }

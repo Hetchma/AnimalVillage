@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class SettingManager : MonoBehaviour
 {
+    [SerializeField] GameObject howToPanel;
+
+
     public void OnSettingPanel()
     {
         gameObject.SetActive(true);
@@ -15,6 +19,16 @@ public class SettingManager : MonoBehaviour
 #elif UNITY_STANDALONE
       UnityEngine.Application.Quit();
 #endif
+    }
+
+    public void OnHowToPanel()
+    {
+        howToPanel.SetActive(true);
+    }
+
+    public void OffHowToPanel()
+    {
+        howToPanel.SetActive(false);
     }
 
 }
