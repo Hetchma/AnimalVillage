@@ -12,7 +12,7 @@ public class GameDirector : MonoBehaviour
     [SerializeField] Button LionMapButton;
 
     float currentTime;
-    float span = 0.01f;
+    float span = 0.4f;
 
     int gold = 0;
 
