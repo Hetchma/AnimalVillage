@@ -15,6 +15,9 @@
 - 獲得したハートによってキャラクターを追加できます
 - ゲーム進捗ミッションをこなすことでダイヤを獲得できます
 
+## クラス図
+![クラス図](https://github.com/KazukiShimura/AnimalVillage/blob/main/out/plantuml/include/include.svg)
+
 ## 工夫した点、苦労した点
 - 2DのUI上に3Dキャラクターを表示させる機能（キャラクター選択画面）
 - キャラクターが自由にうろうろする動作の実装
