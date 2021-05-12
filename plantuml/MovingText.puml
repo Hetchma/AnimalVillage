@@ -1,0 +1,16 @@
+@startuml
+class MovingText {
+    textWidth : float
+    panelWidth : float
+    textSpeed : float = 150f
+    textLenMax : int = 30
+    latestText : string
+    + canMoveText : bool = true
+    - Start() : void
+    Update() : void
+    + TextSpace() : void
+}
+MonoBehaviour <|-- MovingText
+MovingText --> "Text1" TextMeshProUGUI
+MovingText --> "panel" Image
+@enduml

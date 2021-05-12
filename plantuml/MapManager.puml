@@ -1,0 +1,35 @@
+@startuml
+class MapManager {
+    + OnCatMap : bool = true
+    + OnDogMap : bool = false
+    + OnChickenMap : bool = false
+    + OnPenguinMap : bool = false
+    + OnLionMap : bool = false
+    + CanNavMesh : bool = false
+    - Start() : void
+    + Dog_Map_Button() : void
+    + Chicken_Map_Button() : void
+    + Penguin_Map_Button() : void
+    + Lion_Map_Button() : void
+    NewMapInst(map:GameObject, mapPos:Vector3, goldText:string) : void
+    + OpenPlusMapPanel() : void
+}
+MonoBehaviour <|-- MapManager
+MapManager --> "Dog_Map" GameObject
+MapManager --> "Chicken_Map" GameObject
+MapManager --> "Penguin_Map" GameObject
+MapManager --> "Lion_Map" GameObject
+MapManager --> "PlusMapPanel" GameObject
+MapManager --> "Dog_Map_B" Button
+MapManager --> "Chicken_Map_B" Button
+MapManager --> "Penguin_Map_B" Button
+MapManager --> "Lion_Map_B" Button
+MapManager --> "GameDirector" GameDirector
+MapManager --> "audioSource" AudioSource
+MapManager --> "newMapSE" AudioClip
+MapManager --> "mainCamera" GameObject
+MapManager --> "uIPanel" UIPanel
+MapManager --> "Heart" Text
+MapManager --> "Dia" Text
+MapManager --> "Gold" Text
+@enduml

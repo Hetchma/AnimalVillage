@@ -1,0 +1,9 @@
+@startuml
+class SoundManager {
+    - Start() : void
+    + OnSound() : void
+    + OffSound() : void
+}
+MonoBehaviour <|-- SoundManager
+SoundManager --> "OnSoundButton" GameObject
+@enduml

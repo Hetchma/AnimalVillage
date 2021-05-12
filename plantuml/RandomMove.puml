@@ -1,0 +1,17 @@
+@startuml
+class RandomMove {
+    radius : float = 10
+    waitTime : float = 5
+    time : float = 0
+    Start() : void
+    GotoNextPoint() : void
+    StopHere() : void
+    OnCollisionEnter(collision:Collision) : void
+    Update() : void
+}
+MonoBehaviour <|-- RandomMove
+RandomMove --> "central" Transform
+RandomMove --> "agent" NavMeshAgent
+RandomMove --> "anim" Animator
+RandomMove --> "pos" Vector3
+@enduml

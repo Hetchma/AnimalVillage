@@ -1,0 +1,23 @@
+@startuml
+class GameDirector {
+    currentTime : float
+    span : float = 0.4f
+    gold : int = 0
+    goldRank : int = 0
+    maxgold : int = 100
+    + onRocked_Gold : bool = false
+    Start() : void
+    Update() : void
+    NewMapTrigger() : void
+    HeartTrigger() : void
+    DiaTrigger() : void
+}
+MonoBehaviour <|-- GameDirector
+GameDirector --> "Heart" Text
+GameDirector --> "Dia" Text
+GameDirector --> "Gold" Text
+GameDirector --> "DogMapButton" Button
+GameDirector --> "ChickenMapButton" Button
+GameDirector --> "PenguinMapButton" Button
+GameDirector --> "LionMapButton" Button
+@enduml

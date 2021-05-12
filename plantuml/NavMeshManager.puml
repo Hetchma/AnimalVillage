@@ -1,0 +1,9 @@
+@startuml
+class NavMeshManager {
+    - Start() : void
+    + Update() : void
+}
+MonoBehaviour <|-- NavMeshManager
+NavMeshManager --> "_surface" NavMeshSurface
+NavMeshManager --> "mapManager" MapManager
+@enduml

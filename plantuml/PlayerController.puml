@@ -1,0 +1,30 @@
+@startuml
+class PlayerController {
+    + movementSpeed : float = 3
+    + jumpForce : float = 300
+    + timeBeforeNextJump : float = 1.2f
+    - canJump : float = 0f
+    + eventTimer : float = 20.0f
+    + navMeshTimer : float = 5f
+    speed : float
+    Start() : void
+    Update() : void
+    ControllPlayer() : void
+    EventTimer() : float
+    EventSelecter() : Event
+    RunEvent(newEvent:Event) : void
+}
+enum Event {
+    eat,
+    medicine,
+}
+MonoBehaviour <|-- PlayerController
+PlayerController --> "anim" Animator
+PlayerController --> "rb" Rigidbody
+PlayerController --> "m_navMeshAgent" NavMeshAgent
+PlayerController --> "newEvent" Event
+PlayerController --> "animal" GameObject
+PlayerController --> "balloon_eat" GameObject
+PlayerController --> "ballon_medicine" GameObject
+PlayerController +-- Event
+@enduml

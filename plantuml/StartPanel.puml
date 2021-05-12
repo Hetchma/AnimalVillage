@@ -1,0 +1,14 @@
+@startuml
+class StartPanel {
+    + DurationSeconds : float
+    - Awake() : void
+    Update() : void
+    + StartButton() : void
+}
+MonoBehaviour <|-- StartPanel
+StartPanel --> "targetObject" GameObject
+StartPanel --> "mainCamera" GameObject
+StartPanel --> "UICanvas" GameObject
+StartPanel --> "startText" TextMeshProUGUI
+StartPanel --> "EaseType" Ease
+@enduml

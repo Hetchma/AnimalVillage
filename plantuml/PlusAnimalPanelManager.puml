@@ -1,0 +1,48 @@
+@startuml
+class PlusAnimalPanelManager {
+    yAdjust : int = 5
+    zAdjust : int
+    catCost : int = 5
+    dogCost : int = 10
+    chickenCost : int = 20
+    penguinCost : int = 30
+    lionCost : int = 50
+    Update() : void
+    + OpenPlusAnimalPanel() : void
+    + RightButton() : void
+    + LeftButton() : void
+    AnimalCost() : void
+    CanPlusAnimal() : void
+    + PlusAnimal() : void
+    Plus(animalPrefab:GameObject, vector3:Vector3) : void
+    + GetInputName() : void
+    + OnValueChanged() : void
+}
+MonoBehaviour <|-- PlusAnimalPanelManager
+PlusAnimalPanelManager --> "PlusAnimalPanel" GameObject
+PlusAnimalPanelManager --> "mainCamera" GameObject
+PlusAnimalPanelManager --> "UICamera" GameObject
+PlusAnimalPanelManager --> "R_Button" GameObject
+PlusAnimalPanelManager --> "L_Button" GameObject
+PlusAnimalPanelManager --> "CatPrefab" GameObject
+PlusAnimalPanelManager --> "DogPrefab" GameObject
+PlusAnimalPanelManager --> "ChickenPrefab" GameObject
+PlusAnimalPanelManager --> "PenguinPrefab" GameObject
+PlusAnimalPanelManager --> "LionPrefab" GameObject
+PlusAnimalPanelManager --> "newNamePanel" GameObject
+PlusAnimalPanelManager --> "cat_Map" GameObject
+PlusAnimalPanelManager --> "dog_Map" GameObject
+PlusAnimalPanelManager --> "chicken_Map" GameObject
+PlusAnimalPanelManager --> "penguin_Map" GameObject
+PlusAnimalPanelManager --> "lion_Map" GameObject
+PlusAnimalPanelManager --> "plusButton" Button
+PlusAnimalPanelManager --> "mapManager" MapManager
+PlusAnimalPanelManager --> "uIPanel" UIPanel
+PlusAnimalPanelManager --> "nameText" TextMeshProUGUI
+PlusAnimalPanelManager --> "heartText" Text
+PlusAnimalPanelManager --> "CostText" Text
+PlusAnimalPanelManager --> "animalParticle" ParticleSystem
+PlusAnimalPanelManager --> "animal" GameObject
+PlusAnimalPanelManager --> "inputField" InputField
+PlusAnimalPanelManager --> "inputName" Text
+@enduml

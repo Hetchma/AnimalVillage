@@ -1,0 +1,12 @@
+@startuml
+class BGimage {
+    Start() : void
+    + Trigger() : void
+}
+MonoBehaviour <|-- BGimage
+BGimage --> "PlusAnimlalPanel" GameObject
+BGimage --> "PlusMapPanel" GameObject
+BGimage --> "MissionView" GameObject
+BGimage --> "SettingPanel" GameObject
+BGimage --> "HowToPanel" GameObject
+@enduml

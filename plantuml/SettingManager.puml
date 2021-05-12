@@ -1,0 +1,10 @@
+@startuml
+class SettingManager {
+    + OnSettingPanel() : void
+    + Quit() : void
+    + OnHowToPanel() : void
+    + OffHowToPanel() : void
+}
+MonoBehaviour <|-- SettingManager
+SettingManager --> "howToPanel" GameObject
+@enduml

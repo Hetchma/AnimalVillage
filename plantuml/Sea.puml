@@ -1,0 +1,8 @@
+@startuml
+class Sea {
+    waveheight : float = 0.05f
+    T : float = 7f
+    - Update() : void
+}
+MonoBehaviour <|-- Sea
+@enduml

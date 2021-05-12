@@ -1,0 +1,24 @@
+@startuml
+class CharacterCamera {
+    + onClick : bool = false
+    yAdjust : int = 5
+    zAdjust : int
+    Update() : void
+    + OnClickReturn() : void
+    + OnClickEat() : void
+    + OnClickMedicine() : void
+    AnimalCare() : void
+}
+MonoBehaviour <|-- CharacterCamera
+CharacterCamera --> "MainCamera" GameObject
+CharacterCamera --> "ZoomOutButton" GameObject
+CharacterCamera --> "eatButton" Button
+CharacterCamera --> "medicineButton" Button
+CharacterCamera --> "uIPanel" UIPanel
+CharacterCamera --> "heartPrefab" GameObject
+CharacterCamera --> "heartPoint" GameObject
+CharacterCamera --> "heartCount" Text
+CharacterCamera --> "missionPanelManager" MissionPanelManager
+CharacterCamera --> "hitTrn" Transform
+CharacterCamera --> "hitObj" GameObject
+@enduml

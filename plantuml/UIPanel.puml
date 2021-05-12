@@ -1,0 +1,19 @@
+@startuml
+class UIPanel {
+    + CanOtherButton : bool = true
+    + eatPoint : int = 0
+    + medicinePoint : int = 0
+    posX_Max : float = 20f
+    posX_Min : float
+    posZ_Max : float = 5f
+    posZ_Min : float
+    - Start() : void
+    - Update() : void
+    + OncompSE() : void
+    CameraMove() : void
+}
+MonoBehaviour <|-- UIPanel
+UIPanel --> "mainCamera" Camera
+UIPanel --> "compSE" AudioClip
+UIPanel --> "audioSource" AudioSource
+@enduml

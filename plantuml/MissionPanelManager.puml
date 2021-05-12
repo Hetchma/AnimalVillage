@@ -1,0 +1,33 @@
+@startuml
+class MissionPanelManager {
+    + heartTotalCount : int
+    - Update() : void
+    + OpenEventPanel() : void
+    + Mission_1() : void
+    + Mission_1_Comp() : void
+    + Mission_2() : void
+    + Mission_2_Comp() : void
+    + Mission_3() : void
+    + Mission_3_Comp() : void
+    + Mission_4() : void
+    + Mission_4_Comp() : void
+    + Mission_5() : void
+    + Mission_5_Comp() : void
+    + Mission_6() : void
+    + Mission_6_Comp() : void
+    TextGetter() : void
+    OnMission(path:string) : void
+    MissionComplete(path:string) : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- MissionPanelManager
+MissionPanelManager --> "uIPanel" UIPanel
+MissionPanelManager --> "mapManager" MapManager
+MissionPanelManager --> "diaPrefab" GameObject
+MissionPanelManager --> "diaPoint" GameObject
+MissionPanelManager --> "diaCount" Text
+MissionPanelManager --> "heartCount" Text
+MissionPanelManager --> "movingText" MovingText
+MissionPanelManager o-> "missionTexts<GameObject>" "List`1"
+@enduml

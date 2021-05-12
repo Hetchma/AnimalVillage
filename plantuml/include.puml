@@ -1,0 +1,293 @@
+@startuml
+class BGimage {
+    Start() : void
+    + Trigger() : void
+}
+MonoBehaviour <|-- BGimage
+BGimage --> "PlusAnimlalPanel" GameObject
+BGimage --> "PlusMapPanel" GameObject
+BGimage --> "MissionView" GameObject
+BGimage --> "SettingPanel" GameObject
+BGimage --> "HowToPanel" GameObject
+class CharacterCamera {
+    + onClick : bool = false
+    yAdjust : int = 5
+    zAdjust : int
+    Update() : void
+    + OnClickReturn() : void
+    + OnClickEat() : void
+    + OnClickMedicine() : void
+    AnimalCare() : void
+}
+MonoBehaviour <|-- CharacterCamera
+CharacterCamera --> "MainCamera" GameObject
+CharacterCamera --> "ZoomOutButton" GameObject
+CharacterCamera --> "eatButton" Button
+CharacterCamera --> "medicineButton" Button
+CharacterCamera --> "uIPanel" UIPanel
+CharacterCamera --> "heartPrefab" GameObject
+CharacterCamera --> "heartPoint" GameObject
+CharacterCamera --> "heartCount" Text
+CharacterCamera --> "missionPanelManager" MissionPanelManager
+CharacterCamera --> "hitTrn" Transform
+CharacterCamera --> "hitObj" GameObject
+class CharacterUI {
+    Start() : void
+    Update() : void
+}
+MonoBehaviour <|-- CharacterUI
+CharacterUI --> "myRectTfm" RectTransform
+class GameDirector {
+    currentTime : float
+    span : float = 0.4f
+    gold : int = 0
+    goldRank : int = 0
+    maxgold : int = 100
+    + onRocked_Gold : bool = false
+    Start() : void
+    Update() : void
+    NewMapTrigger() : void
+    HeartTrigger() : void
+    DiaTrigger() : void
+}
+MonoBehaviour <|-- GameDirector
+GameDirector --> "Heart" Text
+GameDirector --> "Dia" Text
+GameDirector --> "Gold" Text
+GameDirector --> "DogMapButton" Button
+GameDirector --> "ChickenMapButton" Button
+GameDirector --> "PenguinMapButton" Button
+GameDirector --> "LionMapButton" Button
+class MapManager {
+    + OnCatMap : bool = true
+    + OnDogMap : bool = false
+    + OnChickenMap : bool = false
+    + OnPenguinMap : bool = false
+    + OnLionMap : bool = false
+    + CanNavMesh : bool = false
+    - Start() : void
+    + Dog_Map_Button() : void
+    + Chicken_Map_Button() : void
+    + Penguin_Map_Button() : void
+    + Lion_Map_Button() : void
+    NewMapInst(map:GameObject, mapPos:Vector3, goldText:string) : void
+    + OpenPlusMapPanel() : void
+}
+MonoBehaviour <|-- MapManager
+MapManager --> "Dog_Map" GameObject
+MapManager --> "Chicken_Map" GameObject
+MapManager --> "Penguin_Map" GameObject
+MapManager --> "Lion_Map" GameObject
+MapManager --> "PlusMapPanel" GameObject
+MapManager --> "Dog_Map_B" Button
+MapManager --> "Chicken_Map_B" Button
+MapManager --> "Penguin_Map_B" Button
+MapManager --> "Lion_Map_B" Button
+MapManager --> "GameDirector" GameDirector
+MapManager --> "audioSource" AudioSource
+MapManager --> "newMapSE" AudioClip
+MapManager --> "mainCamera" GameObject
+MapManager --> "uIPanel" UIPanel
+MapManager --> "Heart" Text
+MapManager --> "Dia" Text
+MapManager --> "Gold" Text
+class MissionPanelManager {
+    + heartTotalCount : int
+    - Update() : void
+    + OpenEventPanel() : void
+    + Mission_1() : void
+    + Mission_1_Comp() : void
+    + Mission_2() : void
+    + Mission_2_Comp() : void
+    + Mission_3() : void
+    + Mission_3_Comp() : void
+    + Mission_4() : void
+    + Mission_4_Comp() : void
+    + Mission_5() : void
+    + Mission_5_Comp() : void
+    + Mission_6() : void
+    + Mission_6_Comp() : void
+    TextGetter() : void
+    OnMission(path:string) : void
+    MissionComplete(path:string) : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- MissionPanelManager
+MissionPanelManager --> "uIPanel" UIPanel
+MissionPanelManager --> "mapManager" MapManager
+MissionPanelManager --> "diaPrefab" GameObject
+MissionPanelManager --> "diaPoint" GameObject
+MissionPanelManager --> "diaCount" Text
+MissionPanelManager --> "heartCount" Text
+MissionPanelManager --> "movingText" MovingText
+MissionPanelManager o-> "missionTexts<GameObject>" "List`1"
+class MovingText {
+    textWidth : float
+    panelWidth : float
+    textSpeed : float = 150f
+    textLenMax : int = 30
+    latestText : string
+    + canMoveText : bool = true
+    - Start() : void
+    Update() : void
+    + TextSpace() : void
+}
+MonoBehaviour <|-- MovingText
+MovingText --> "Text1" TextMeshProUGUI
+MovingText --> "panel" Image
+class NavMeshManager {
+    - Start() : void
+    + Update() : void
+}
+MonoBehaviour <|-- NavMeshManager
+NavMeshManager --> "_surface" NavMeshSurface
+NavMeshManager --> "mapManager" MapManager
+class PlayerController {
+    + movementSpeed : float = 3
+    + jumpForce : float = 300
+    + timeBeforeNextJump : float = 1.2f
+    - canJump : float = 0f
+    + eventTimer : float = 20.0f
+    + navMeshTimer : float = 5f
+    speed : float
+    Start() : void
+    Update() : void
+    ControllPlayer() : void
+    EventTimer() : float
+    EventSelecter() : Event
+    RunEvent(newEvent:Event) : void
+}
+enum Event {
+    eat,
+    medicine,
+}
+MonoBehaviour <|-- PlayerController
+PlayerController --> "anim" Animator
+PlayerController --> "rb" Rigidbody
+PlayerController --> "m_navMeshAgent" NavMeshAgent
+PlayerController --> "newEvent" Event
+PlayerController --> "animal" GameObject
+PlayerController --> "balloon_eat" GameObject
+PlayerController --> "ballon_medicine" GameObject
+PlayerController +-- Event
+class PlusAnimalPanelManager {
+    yAdjust : int = 5
+    zAdjust : int
+    catCost : int = 5
+    dogCost : int = 10
+    chickenCost : int = 20
+    penguinCost : int = 30
+    lionCost : int = 50
+    Update() : void
+    + OpenPlusAnimalPanel() : void
+    + RightButton() : void
+    + LeftButton() : void
+    AnimalCost() : void
+    CanPlusAnimal() : void
+    + PlusAnimal() : void
+    Plus(animalPrefab:GameObject, vector3:Vector3) : void
+    + GetInputName() : void
+    + OnValueChanged() : void
+}
+MonoBehaviour <|-- PlusAnimalPanelManager
+PlusAnimalPanelManager --> "PlusAnimalPanel" GameObject
+PlusAnimalPanelManager --> "mainCamera" GameObject
+PlusAnimalPanelManager --> "UICamera" GameObject
+PlusAnimalPanelManager --> "R_Button" GameObject
+PlusAnimalPanelManager --> "L_Button" GameObject
+PlusAnimalPanelManager --> "CatPrefab" GameObject
+PlusAnimalPanelManager --> "DogPrefab" GameObject
+PlusAnimalPanelManager --> "ChickenPrefab" GameObject
+PlusAnimalPanelManager --> "PenguinPrefab" GameObject
+PlusAnimalPanelManager --> "LionPrefab" GameObject
+PlusAnimalPanelManager --> "newNamePanel" GameObject
+PlusAnimalPanelManager --> "cat_Map" GameObject
+PlusAnimalPanelManager --> "dog_Map" GameObject
+PlusAnimalPanelManager --> "chicken_Map" GameObject
+PlusAnimalPanelManager --> "penguin_Map" GameObject
+PlusAnimalPanelManager --> "lion_Map" GameObject
+PlusAnimalPanelManager --> "plusButton" Button
+PlusAnimalPanelManager --> "mapManager" MapManager
+PlusAnimalPanelManager --> "uIPanel" UIPanel
+PlusAnimalPanelManager --> "nameText" TextMeshProUGUI
+PlusAnimalPanelManager --> "heartText" Text
+PlusAnimalPanelManager --> "CostText" Text
+PlusAnimalPanelManager --> "animalParticle" ParticleSystem
+PlusAnimalPanelManager --> "animal" GameObject
+PlusAnimalPanelManager --> "inputField" InputField
+PlusAnimalPanelManager --> "inputName" Text
+class PlusMaplPanelmanager {
+    + OpenPlusMapPanel() : void
+}
+MonoBehaviour <|-- PlusMaplPanelmanager
+class RandomMove {
+    radius : float = 10
+    waitTime : float = 5
+    time : float = 0
+    Start() : void
+    GotoNextPoint() : void
+    StopHere() : void
+    OnCollisionEnter(collision:Collision) : void
+    Update() : void
+}
+MonoBehaviour <|-- RandomMove
+RandomMove --> "central" Transform
+RandomMove --> "agent" NavMeshAgent
+RandomMove --> "anim" Animator
+RandomMove --> "pos" Vector3
+class Sea {
+    waveheight : float = 0.05f
+    T : float = 7f
+    - Update() : void
+}
+MonoBehaviour <|-- Sea
+class SettingManager {
+    + OnSettingPanel() : void
+    + Quit() : void
+    + OnHowToPanel() : void
+    + OffHowToPanel() : void
+}
+MonoBehaviour <|-- SettingManager
+SettingManager --> "howToPanel" GameObject
+class SoundManager {
+    - Start() : void
+    + OnSound() : void
+    + OffSound() : void
+}
+MonoBehaviour <|-- SoundManager
+SoundManager --> "OnSoundButton" GameObject
+class StartPanel {
+    + DurationSeconds : float
+    - Awake() : void
+    Update() : void
+    + StartButton() : void
+}
+MonoBehaviour <|-- StartPanel
+StartPanel --> "targetObject" GameObject
+StartPanel --> "mainCamera" GameObject
+StartPanel --> "UICanvas" GameObject
+StartPanel --> "startText" TextMeshProUGUI
+StartPanel --> "EaseType" Ease
+class UICharacter {
+    Update() : void
+}
+MonoBehaviour <|-- UICharacter
+class UIPanel {
+    + CanOtherButton : bool = true
+    + eatPoint : int = 0
+    + medicinePoint : int = 0
+    posX_Max : float = 20f
+    posX_Min : float
+    posZ_Max : float = 5f
+    posZ_Min : float
+    - Start() : void
+    - Update() : void
+    + OncompSE() : void
+    CameraMove() : void
+}
+MonoBehaviour <|-- UIPanel
+UIPanel --> "mainCamera" Camera
+UIPanel --> "compSE" AudioClip
+UIPanel --> "audioSource" AudioSource
+@enduml
